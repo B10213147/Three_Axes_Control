@@ -10,20 +10,20 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./keys_driver.o" \
 "./main.o" \
-"./pulse_train.o" \
-"./rtos.o" \
-"./rtos_pipe.o" \
-"./rtos_sched.o" \
-"./rtos_task.o" \
 "./system_TM4C123.o" \
 "./three_axes.o" \
 "./tm4c123gh6pm_startup_ccs_gcc.o" \
-"./uart_driver.o" \
 "./x_axis.o" \
 "./y_axis.o" \
 "./z_axis.o" \
+"./rtos/keys_driver.o" \
+"./rtos/pulse_train.o" \
+"./rtos/rtos.o" \
+"./rtos/rtos_pipe.o" \
+"./rtos/rtos_sched.o" \
+"./rtos/rtos_task.o" \
+"./rtos/uart_driver.o" \
 -Wl,-T"../tm4c123gh6pm.lds" \
 $(GEN_CMDS__FLAG) \
 -Wl,--start-group \
@@ -41,7 +41,9 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include rtos/subdir_vars.mk
 -include subdir_rules.mk
+-include rtos/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -170,8 +172,8 @@ three_axis.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "keys_driver.d" "main.d" "pulse_train.d" "rtos.d" "rtos_pipe.d" "rtos_sched.d" "rtos_task.d" "system_TM4C123.d" "three_axes.d" "tm4c123gh6pm_startup_ccs_gcc.d" "uart_driver.d" "x_axis.d" "y_axis.d" "z_axis.d" 
-	-$(RM) "keys_driver.o" "main.o" "pulse_train.o" "rtos.o" "rtos_pipe.o" "rtos_sched.o" "rtos_task.o" "system_TM4C123.o" "three_axes.o" "tm4c123gh6pm_startup_ccs_gcc.o" "uart_driver.o" "x_axis.o" "y_axis.o" "z_axis.o" 
+	-$(RM) "main.d" "system_TM4C123.d" "three_axes.d" "tm4c123gh6pm_startup_ccs_gcc.d" "x_axis.d" "y_axis.d" "z_axis.d" "rtos\keys_driver.d" "rtos\pulse_train.d" "rtos\rtos.d" "rtos\rtos_pipe.d" "rtos\rtos_sched.d" "rtos\rtos_task.d" "rtos\uart_driver.d" 
+	-$(RM) "main.o" "system_TM4C123.o" "three_axes.o" "tm4c123gh6pm_startup_ccs_gcc.o" "x_axis.o" "y_axis.o" "z_axis.o" "rtos\keys_driver.o" "rtos\pulse_train.o" "rtos\rtos.o" "rtos\rtos_pipe.o" "rtos\rtos_sched.o" "rtos\rtos_task.o" "rtos\uart_driver.o" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
