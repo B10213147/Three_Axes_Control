@@ -42,7 +42,7 @@ int main(void) {
 			}
 		}
 
-		x_axis_Move(81);
+		axis_move(&x_pulse_Gen_info, 81);
 	}
 }
 
