@@ -24,38 +24,40 @@ const uint32_t full_Period = 65000; //unit = ticks/10ms
 
 void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses){
 	if(pulse_Gen->finished == true){
-			pulse_Gen->total = pulses;
-			if(pulse_Gen->total == 0) return;
-			pulse_Gen->remain = pulses;
-			pulse_Gen->finished = false;
+		pulse_Gen->total = pulses;
+		if(pulse_Gen->total == 0) return;
+		pulse_Gen->remain = pulses;
+		pulse_Gen->finished = false;
 
-			if(pulse_Gen == &x_pulse_Gen_info)
-				set_dir(x_axis, true);
-			else if(pulse_Gen == &y_pulse_Gen_info)
-				set_dir(y_axis, true);
-			else if(pulse_Gen == &z_pulse_Gen_info)
-				set_dir(z_axis, true);
-		}
+		if(pulse_Gen == &x_pulse_Gen_info)
+			set_dir(x_axis, true);
+		else if(pulse_Gen == &y_pulse_Gen_info)
+			set_dir(y_axis, true);
+		else if(pulse_Gen == &z_pulse_Gen_info)
+			set_dir(z_axis, true);
+	}
 
-		if(pulse_Gen->next == 0){
-			// Acceleration & Deceleration
-			if(pulse_Gen->total >= 45*2){
-				movement(pulse_Gen, 10);
-			}
-			else{	// total < 45*2
-				movement(pulse_Gen, 5);
-			}
-			// Position modify
-			if(pulse_Gen->current <= 1 && pulse_Gen->remain < 0){
-				reverse(pulse_Gen);
-			}
+	if(pulse_Gen->next == 0){
+		// Acceleration & Deceleration
+		if(pulse_Gen->total >= 45*2){
+			movement(pulse_Gen, 10);
 		}
-		pulse_Generator(pulse_Gen);
-		if(pulse_Gen->remain != 0) pulse_Gen->finished = false;
-		else{
-			pulse_Gen->finished = true;
-			pulse_Gen->current = 0;
+		else{	// total < 45*2
+			movement(pulse_Gen, 5);
 		}
+		// Position modify
+		if(pulse_Gen->current <= 1 && pulse_Gen->remain < 0){
+			reverse(pulse_Gen);
+		}
+	}
+
+	pulse_Generator(pulse_Gen);
+
+	if(pulse_Gen->remain != 0) pulse_Gen->finished = false;
+	else{
+		pulse_Gen->finished = true;
+		pulse_Gen->current = 0;
+	}
 }
 
 void axes_init(void){
@@ -124,6 +126,8 @@ void reverse(struct pulse_Gen_info *pulse_Gen){
 	pulse_Gen->remain += 1*2;
 }
 
+//!	state == true means non_reverse
+//!	state == false means reverse
 void set_dir(struct axis *axis, bool state){
 	if(state != false){
 		if(axis->dir == 'r' || axis->dir == 'u' || axis->dir == 'f')
