@@ -11,8 +11,8 @@
 #include "three_axes.h"
 
 extern void x_axis_Init(void);
-extern void x_axis_Move(int pulses);
+extern void x_pwm_Start(void);
 
-
+extern struct pulse_Gen_info x_pulse_Gen_info;
 
 #endif /* X_AXIS_H_ */
