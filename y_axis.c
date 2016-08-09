@@ -14,21 +14,15 @@
 #include "driverlib/pwm.h"
 #include "inc/hw_ints.h"
 
-void y_pulse_Gen(void);
-void y_pwm_Start(void);
 void y_timer_End(void);
 
 struct pulse_Gen_info y_pulse_Gen_info =
 	{0, 0, 0, 0, false, true};
 
-void y_axis_Move(int pulses){
-	y_axis->current = 3 + (y_axis->current % 10);
-	y_pulse_Gen();
-}
-
 void y_axis_Init(void){
 	y_axis = (struct axis*)malloc(sizeof(struct axis));
 	*y_axis = *x_axis;
+	y_axis->pulse_Gen = &y_pulse_Gen_info;
 
 	//Configure PF2 Pin as PWM
 	GPIOPinConfigure(GPIO_PF2_M1PWM6);
@@ -45,23 +39,16 @@ void y_axis_Init(void){
 	//
 	TimerConfigure(TIMER2_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT | TIMER_CFG_B_CAP_COUNT);
 	TimerIntRegister(TIMER2_BASE, TIMER_B, y_timer_End);
-	IntPrioritySet(INT_TIMER2B, 0x01);	//set Timer2B to 1 priority
+	IntPrioritySet(INT_TIMER2B, 0x20);	//set Timer2B to 1 priority
 	TimerMatchSet(TIMER2_BASE, TIMER_B, 0);
 	TimerIntEnable(TIMER2_BASE, TIMER_CAPB_MATCH);
 }
 
-void y_pulse_Gen(void){
-	if(y_pulse_Gen_info.working == false){
-		y_pwm_Start();
-		y_pulse_Gen_info.working = true;
-	}
-}
-
 void y_pwm_Start(void){
-	uint32_t period = full_Period / y_axis->current;	//unit = ticks/cycle
+	uint32_t period = full_Period / y_pulse_Gen_info.current;	//unit = ticks/cycle
 	uint32_t width_H = period * duty;
 
-	TimerLoadSet(TIMER2_BASE, TIMER_B, y_axis->current);
+	TimerLoadSet(TIMER2_BASE, TIMER_B, y_pulse_Gen_info.current);
 
 	TimerEnable(TIMER2_BASE, TIMER_B);
 
@@ -74,6 +61,7 @@ void y_pwm_Start(void){
 }
 
 void y_timer_End(void){
+	disable_os();
 	if(TimerIntStatus(TIMER2_BASE, true) & TIMER_CAPB_MATCH){
 		// Disable the PWM generator
 		PWMGenDisable(PWM1_BASE, PWM_GEN_3);
@@ -82,5 +70,6 @@ void y_timer_End(void){
 		TimerIntClear(TIMER2_BASE, TIMER_CAPB_MATCH);
 		y_pulse_Gen_info.working = false;
 	}
+	enable_os();
 }
 
