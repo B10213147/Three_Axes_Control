@@ -44,7 +44,7 @@ void bluetooth_init(void){
 	{
 	}
 
-	//Configure PD6, PD7 Pin as Timer Capture
+	//Configure PD6, PD7 Pin as UARTRx, UARTTx
 	GPIOPinConfigure(GPIO_PD6_U2RX);
 	GPIOPinConfigure(GPIO_PD7_U2TX);
 	GPIOPinTypeUART(GPIOD_BASE, GPIO_PIN_6 | GPIO_PIN_7);
