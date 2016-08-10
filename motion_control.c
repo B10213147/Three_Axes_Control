@@ -31,8 +31,25 @@ void Axis_Config(void){
 }
 
 void move_P2P(point p1, point p2){
-	int dx = (p2.x - p1.x) * x_scale;
-	int dy = (p2.y - p1.y) * y_scale;
+	int dx = 0, dy = 0;
+
+	if(x_axis->pulse_Gen->finished != false &&
+		y_axis->pulse_Gen->finished != false){
+		dx = (p2.x - p1.x) * x_scale;
+		dy = (p2.y - p1.y) * y_scale;
+
+		if(dx < 0){
+			x_axis->dir = 'r';
+			dx = -dx;
+		}
+		else x_axis->dir = 'l';
+		if(dy < 0){
+			y_axis->dir = 'u';
+			dy = -dy;
+		}
+		else y_axis->dir = 'd';
+	}
+
 	axis_move(x_axis->pulse_Gen, dx);
 	axis_move(y_axis->pulse_Gen, dy);
 }

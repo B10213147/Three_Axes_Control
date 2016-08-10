@@ -45,7 +45,7 @@ void x_axis_Init(void){
 	//
 	TimerConfigure(TIMER2_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT | TIMER_CFG_B_CAP_COUNT);
 	TimerIntRegister(TIMER2_BASE, TIMER_A, x_timer_End);
-	IntPrioritySet(INT_TIMER2A, 0x01);	//set Timer2A to 1 priority
+	IntPrioritySet(INT_TIMER2A, 0x20);	//set Timer2A to 1 priority
 	TimerMatchSet(TIMER2_BASE, TIMER_A, 0);
 	TimerIntEnable(TIMER2_BASE, TIMER_CAPA_MATCH);
 }

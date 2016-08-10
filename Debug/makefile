@@ -10,7 +10,9 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./bluetooth.o" \
 "./main.o" \
+"./motion_control.o" \
 "./system_TM4C123.o" \
 "./three_axes.o" \
 "./tm4c123gh6pm_startup_ccs_gcc.o" \
@@ -140,40 +142,40 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-three_axis.out \
+three_axes.out \
 
 EXE_OUTPUTS__QUOTED += \
-"three_axis.out" \
+"three_axes.out" \
 
 BIN_OUTPUTS += \
-three_axis.hex \
+three_axes.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"three_axis.hex" \
+"three_axes.hex" \
 
 
 # All Target
-all: three_axis.out
+all: three_axes.out
 
 # Tool invocations
-three_axis.out: $(OBJS) $(LDS_SRCS) $(GEN_CMDS)
+three_axes.out: $(OBJS) $(LDS_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU Linker'
-	"C:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/arm-none-eabi-gcc.exe" -march=armv7e-m -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DTM4C123GH6PM -DPART_TM4C123GH6PM -Dgcc -ffunction-sections -fdata-sections -g -gdwarf-3 -gstrict-dwarf -Wall -Wl,-Map,"three_axis.map" -L"C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc" -o"three_axis.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/arm-none-eabi-gcc.exe" -march=armv7e-m -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DTM4C123GH6PM -DPART_TM4C123GH6PM -Dgcc -ffunction-sections -fdata-sections -g -gdwarf-3 -gstrict-dwarf -Wall -Wl,-Map,"three_axes.map" -L"C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc" -o"three_axes.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-three_axis.hex: $(EXE_OUTPUTS)
+three_axes.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: GNU Objcopy Utility'
-	"C:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/arm-none-eabi-objcopy.exe"  $(EXE_OUTPUTS__QUOTED) "three_axis.hex"
+	"C:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/arm-none-eabi-objcopy.exe"  $(EXE_OUTPUTS__QUOTED) "three_axes.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "main.d" "system_TM4C123.d" "three_axes.d" "tm4c123gh6pm_startup_ccs_gcc.d" "x_axis.d" "y_axis.d" "z_axis.d" "rtos\keys_driver.d" "rtos\pulse_train.d" "rtos\rtos.d" "rtos\rtos_pipe.d" "rtos\rtos_sched.d" "rtos\rtos_task.d" "rtos\uart_driver.d" 
-	-$(RM) "main.o" "system_TM4C123.o" "three_axes.o" "tm4c123gh6pm_startup_ccs_gcc.o" "x_axis.o" "y_axis.o" "z_axis.o" "rtos\keys_driver.o" "rtos\pulse_train.o" "rtos\rtos.o" "rtos\rtos_pipe.o" "rtos\rtos_sched.o" "rtos\rtos_task.o" "rtos\uart_driver.o" 
+	-$(RM) "bluetooth.d" "main.d" "motion_control.d" "system_TM4C123.d" "three_axes.d" "tm4c123gh6pm_startup_ccs_gcc.d" "x_axis.d" "y_axis.d" "z_axis.d" "rtos\keys_driver.d" "rtos\pulse_train.d" "rtos\rtos.d" "rtos\rtos_pipe.d" "rtos\rtos_sched.d" "rtos\rtos_task.d" "rtos\uart_driver.d" 
+	-$(RM) "bluetooth.o" "main.o" "motion_control.o" "system_TM4C123.o" "three_axes.o" "tm4c123gh6pm_startup_ccs_gcc.o" "x_axis.o" "y_axis.o" "z_axis.o" "rtos\keys_driver.o" "rtos\pulse_train.o" "rtos\rtos.o" "rtos\rtos_pipe.o" "rtos\rtos_sched.o" "rtos\rtos_task.o" "rtos\uart_driver.o" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

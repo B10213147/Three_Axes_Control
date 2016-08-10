@@ -6,6 +6,7 @@
  */
 
 #include "y_axis.h"
+#include "rtos.h"
 #include "TM4C123GH6PM.h"
 #include "driverlib/timer.h"
 #include "driverlib/gpio.h"

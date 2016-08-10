@@ -7,22 +7,21 @@
 #include "pulse_train.h"
 #include "keys_driver.h"
 #include "uart_driver.h"
-#include "three_axes.h"
-
+#include "motion_control.h"
 
 void startup(void);
 void print_string(char *string);
 
-struct pulse_info *green_pulse;
+point Home = {0, 0};
 int main(void) {
 	startup();
-	axes_init();
 
 	rtos_task_create(keys_driver, 0, 2);
 	rtos_task_create(uart_driver, 0, 3);
 //	rtos_task_create(x_axis_Move, 0, 1000);
 //	rtos_task_create(pwm_Y_GEN, 0, 1000);
 
+	point p1 = {0.5, 0.6};
 	char temp;
 	while(1){
 		if(rtos_pipe_read(uart_rx_Fifo, &temp, 1)){
@@ -42,7 +41,7 @@ int main(void) {
 			}
 		}
 
-		axis_move(&x_pulse_Gen_info, 81);
+		move_P2P(Home, p1);
 	}
 }
 
@@ -69,6 +68,8 @@ void startup(void){
 	//	green_pulse = pulse_train_init();
 
 	uart_driver_init();
+
+	Axis_Config();
 
 	enable_os();
 }
