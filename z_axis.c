@@ -23,6 +23,7 @@ struct pulse_Gen_info z_pulse_Gen_info =
 void z_axis_Init(void){
 	z_axis = (struct axis*)malloc(sizeof(struct axis));
 	*z_axis = *x_axis;
+	z_axis->pulse_Gen = &z_pulse_Gen_info;
 }
 
 void z_pwm_Start(void){

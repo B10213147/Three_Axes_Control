@@ -48,8 +48,17 @@ void move_P2P(point p1, point p2){
 			dy = -dy;
 		}
 		else y_axis->dir = 'd';
+
+		rtos_task_create(move_P2P, 0, 5);
 	}
 
-	axis_move(x_axis->pulse_Gen, dx);
-	axis_move(y_axis->pulse_Gen, dy);
+	if(z_axis->pulse_Gen->finished == true){
+		axis_move(x_axis->pulse_Gen, dx);
+		axis_move(y_axis->pulse_Gen, dy);
+	}
+
+	if(x_axis->pulse_Gen->finished != false &&
+		y_axis->pulse_Gen->finished != false){
+		rtos_running_task->delete_flag = true;
+	}
 }
