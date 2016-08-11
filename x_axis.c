@@ -27,8 +27,8 @@ void x_axis_Init(void){
 	x_axis->dir = 'l';
 	x_axis->total = 0;
 	x_axis->remain = 0;
-	x_axis->current = 0;
-	x_axis->next = 0;
+	x_axis->current_pos = 0;
+	x_axis->next_pos = 0;
 
 	//Configure PF1 Pin as PWM
 	GPIOPinConfigure(GPIO_PF1_M1PWM5);

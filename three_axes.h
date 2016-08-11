@@ -34,8 +34,8 @@ struct axis{
 	char dir;
 	int total;
 	int remain;
-	int current;
-	int next;
+	float current_pos;	/* unit: mm */
+	float next_pos;		/* unit: mm */
 };
 
 extern void axes_init(void);

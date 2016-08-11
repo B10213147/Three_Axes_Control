@@ -9,6 +9,7 @@
 #include "rtos.h"
 #include "three_axes.h"
 
+struct rtos_pipe *mc_Fifo;
 AxisInitTypeDef Axis_x, Axis_y;
 float x_scale, y_scale;			/* unit: pulse/mm */
 
@@ -27,7 +28,47 @@ void Axis_Config(void){
 	  y_scale = Axis_y.MotorStepPerRev * Axis_y.DriverMicrostepping *
 	            Axis_y.MotorCoupleLeadscrew / Axis_y.LeadscrewPitch;
 
+	  mc_Fifo = rtos_pipe_create(10);
 	  axes_init();
+}
+
+void calculate_pos(void){
+	char temp;
+	/*
+	 * Get pipe character
+	 */
+	while(rtos_pipe_read(mc_Fifo, &temp, 1)){
+		switch(temp){
+		case 0x41:
+			x_axis->next_pos += 0.1;
+			break;
+		case 0x42:
+			x_axis->next_pos -= 0.1;
+			break;
+		case 0x43:
+			y_axis->next_pos += 0.1;
+			break;
+		case 0x44:
+			y_axis->next_pos -= 0.1;
+			break;
+		}
+	}
+
+	if(x_axis->pulse_Gen->finished != false &&
+		y_axis->pulse_Gen->finished != false &&
+		(x_axis->next_pos != 0 || y_axis->next_pos != 0)){
+		point cur_pos = {x_axis->current_pos, y_axis->current_pos};
+		point next_pos;
+		next_pos.x = cur_pos.x + x_axis->next_pos;
+		next_pos.y = cur_pos.y + y_axis->next_pos;
+
+		move_P2P(cur_pos, next_pos);
+
+		x_axis->current_pos = next_pos.x;
+		x_axis->next_pos = 0;
+		y_axis->current_pos = next_pos.y;
+		y_axis->next_pos = 0;
+	}
 }
 
 void move_P2P(point p1, point p2){

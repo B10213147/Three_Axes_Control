@@ -11,6 +11,7 @@
 
 void startup(void);
 void print_string(char *string);
+void arrow_decode(void);
 
 point Home = {0, 0};
 int main(void) {
@@ -21,28 +22,45 @@ int main(void) {
 //	rtos_task_create(x_axis_Move, 0, 1000);
 //	rtos_task_create(pwm_Y_GEN, 0, 1000);
 
-	point p1 = {0.5, 0.6};
+	point p1 = {0.1, 0.15};
 	char temp;
 	while(1){
 		if(rtos_pipe_read(uart_rx_Fifo, &temp, 1)){
 			rtos_pipe_write(uart_tx_Fifo, &temp, 1);
-			rtos_pipe_write(pulse_Fifo, &temp, 1);
 			print_string("\n\r");	//change line and start from left
+
+			if(temp == 0x1B){	// 0x1B is start character of arrow
+				arrow_decode();
+			}
+			else{	// Normal ASCII
+
+			}
 		}
 
 		if(rtos_pipe_read(keys_Fifo, &temp, 1)){
 			switch(temp){
 			case 'R':
 				print_string("Right botton pressed\n\r");
+
+				move_P2P(Home, p1);
 				break;
 			case 'L':
 				print_string("Left botton pressed\n\r");
+				move_P2P(p1, Home);
 				break;
 			}
 		}
-
-		move_P2P(Home, p1);
+		calculate_pos();
 	}
+}
+
+void arrow_decode(void){
+	char temp;
+	if(rtos_pipe_read(uart_rx_Fifo, &temp, 1))
+		if(temp == 0x5B)
+			if(rtos_pipe_read(uart_rx_Fifo, &temp, 1))
+				if(temp>=0x41 && temp<=0x44)
+					rtos_pipe_write(mc_Fifo, &temp, 1);
 }
 
 void print_string(char *string){

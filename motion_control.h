@@ -24,5 +24,8 @@ typedef struct{
 
 extern void Axis_Config(void);
 extern void move_P2P(point p1, point p2);
+extern void calculate_pos(void);
+
+extern struct rtos_pipe *mc_Fifo;
 
 #endif /* MOTION_CONTROL_H_ */
