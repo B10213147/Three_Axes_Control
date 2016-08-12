@@ -20,7 +20,7 @@ void rtos_task_create(voidfuncptr func, void *arg, int interval){
 	task->agr = arg;
 	task->interval = interval;
 	task->remain_ticks = interval;
-	task->delete_flag = 0;
+	task->delete_flag = false;
 
 	enable_os();
 }

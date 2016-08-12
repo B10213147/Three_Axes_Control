@@ -135,7 +135,8 @@ void set_dir(struct axis *axis, bool state){
 		else GPIOPinWrite(GPIOF_BASE, axis->dir_pin, 0);
 	}
 	else{
-		if(axis->dir == 'r') GPIOPinWrite(GPIOF_BASE, axis->dir_pin, 0);
+		if(axis->dir == 'r' || axis->dir == 'u' || axis->dir == 'f')
+			GPIOPinWrite(GPIOF_BASE, axis->dir_pin, 0);
 		else GPIOPinWrite(GPIOF_BASE, axis->dir_pin, axis->dir_pin);
 	}
 }

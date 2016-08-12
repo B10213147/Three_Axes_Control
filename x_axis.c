@@ -27,8 +27,8 @@ void x_axis_Init(void){
 	x_axis->dir = 'l';
 	x_axis->total = 0;
 	x_axis->remain = 0;
-	x_axis->current = 0;
-	x_axis->next = 0;
+	x_axis->current_pos = 0;
+	x_axis->next_move = 0;
 
 	//Configure PF1 Pin as PWM
 	GPIOPinConfigure(GPIO_PF1_M1PWM5);
@@ -45,7 +45,7 @@ void x_axis_Init(void){
 	//
 	TimerConfigure(TIMER2_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT | TIMER_CFG_B_CAP_COUNT);
 	TimerIntRegister(TIMER2_BASE, TIMER_A, x_timer_End);
-	IntPrioritySet(INT_TIMER2A, 0x01);	//set Timer2A to 1 priority
+	IntPrioritySet(INT_TIMER2A, 0x20);	//set Timer2A to 1 priority
 	TimerMatchSet(TIMER2_BASE, TIMER_A, 0);
 	TimerIntEnable(TIMER2_BASE, TIMER_CAPA_MATCH);
 }
