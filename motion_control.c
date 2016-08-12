@@ -39,35 +39,44 @@ void calculate_pos(void){
 	 */
 	while(rtos_pipe_read(mc_Fifo, &temp, 1)){
 		switch(temp){
+		// Arrow up
 		case 0x41:
-			x_axis->next_pos += 0.1;
+			x_axis->next_move += 0.1;
 			break;
+		// Arrow down
 		case 0x42:
-			x_axis->next_pos -= 0.1;
+			x_axis->next_move -= 0.1;
 			break;
+		// Arrow right
 		case 0x43:
-			y_axis->next_pos += 0.1;
+			y_axis->next_move += 0.1;
 			break;
+		// Arrow left
 		case 0x44:
-			y_axis->next_pos -= 0.1;
+			y_axis->next_move -= 0.1;
+			break;
+		// Go Home
+		case 'H':
+			x_axis->next_move -= x_axis->current_pos;
+			y_axis->next_move -= y_axis->current_pos;
 			break;
 		}
 	}
 
 	if(x_axis->pulse_Gen->finished != false &&
 		y_axis->pulse_Gen->finished != false &&
-		(x_axis->next_pos != 0 || y_axis->next_pos != 0)){
+		(x_axis->next_move != 0 || y_axis->next_move != 0)){
 		point cur_pos = {x_axis->current_pos, y_axis->current_pos};
 		point next_pos;
-		next_pos.x = cur_pos.x + x_axis->next_pos;
-		next_pos.y = cur_pos.y + y_axis->next_pos;
+		next_pos.x = cur_pos.x + x_axis->next_move;
+		next_pos.y = cur_pos.y + y_axis->next_move;
 
 		move_P2P(cur_pos, next_pos);
 
 		x_axis->current_pos = next_pos.x;
-		x_axis->next_pos = 0;
+		x_axis->next_move = 0;
 		y_axis->current_pos = next_pos.y;
-		y_axis->next_pos = 0;
+		y_axis->next_move = 0;
 	}
 }
 

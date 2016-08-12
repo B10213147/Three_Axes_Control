@@ -19,7 +19,7 @@ int main(void) {
 
 	rtos_task_create(keys_driver, 0, 2);
 	rtos_task_create(uart_driver, 0, 3);
-//	rtos_task_create(x_axis_Move, 0, 1000);
+	rtos_task_create(calculate_pos, 0, 1000);
 //	rtos_task_create(pwm_Y_GEN, 0, 1000);
 
 	point p1 = {0.1, 0.15};
@@ -33,7 +33,7 @@ int main(void) {
 				arrow_decode();
 			}
 			else{	// Normal ASCII
-
+				rtos_pipe_write(mc_Fifo, &temp, 1);
 			}
 		}
 
@@ -41,16 +41,16 @@ int main(void) {
 			switch(temp){
 			case 'R':
 				print_string("Right botton pressed\n\r");
-
-				move_P2P(Home, p1);
+				temp = 'H';
+				rtos_pipe_write(mc_Fifo, &temp, 1);
 				break;
 			case 'L':
 				print_string("Left botton pressed\n\r");
-				move_P2P(p1, Home);
+//				move_P2P(p1, Home);
 				break;
 			}
 		}
-		calculate_pos();
+//		calculate_pos();
 	}
 }
 
