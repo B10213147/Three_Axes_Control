@@ -65,7 +65,7 @@ void calculate_pos(void){
 
 	if(x_axis->pulse_Gen->finished != false &&
 		y_axis->pulse_Gen->finished != false &&
-		(x_axis->next_move != 0 || y_axis->next_move != 0)){
+		(x_axis->next_move*10 != 0 || y_axis->next_move*10 != 0)){
 		point cur_pos = {x_axis->current_pos, y_axis->current_pos};
 		point next_pos;
 		next_pos.x = cur_pos.x + x_axis->next_move;
@@ -99,7 +99,7 @@ void move_P2P(point p1, point p2){
 		}
 		else y_axis->dir = 'd';
 
-		rtos_task_create(move_P2P, 0, 5);
+		rtos_task_create(move_P2P, 0, 1);
 	}
 
 	if(z_axis->pulse_Gen->finished == true){
