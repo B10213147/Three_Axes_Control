@@ -24,7 +24,7 @@ void x_axis_Init(void){
 	x_axis = (struct axis *)malloc(sizeof(struct axis));
 	x_axis->pulse_Gen = &x_pulse_Gen_info;
 	x_axis->dir_pin = GPIO_PIN_4;
-	x_axis->dir = 'l';
+	x_axis->dir = 'p';
 	x_axis->total = 0;
 	x_axis->remain = 0;
 	x_axis->current_pos = 0;
