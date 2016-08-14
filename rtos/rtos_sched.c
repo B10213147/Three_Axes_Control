@@ -15,7 +15,7 @@ void rtos_sched_run(struct rtos_task *task){
 	rtos_running_task->function(rtos_running_task->agr);
 	disable_os();
 
-	if(rtos_running_task->delete_flag){
+	if(rtos_running_task->delete_flag == true){
 		rtos_task_delete(rtos_running_task);
 	}
 	else{

@@ -19,8 +19,8 @@ void set_dir(struct axis *axis, bool state);
 struct axis *x_axis;
 struct axis *y_axis;
 struct axis *z_axis;
-const float duty = 0.01;
-const uint32_t full_Period = 65000; //unit = ticks/10ms
+const float duty = 0.5;
+const uint32_t full_Period = 16000/2 * 3; //unit = ticks/3ms
 
 void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses){
 	if(pulse_Gen->finished == true){
@@ -39,11 +39,12 @@ void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses){
 
 	if(pulse_Gen->next == 0){
 		// Acceleration & Deceleration
-		if(pulse_Gen->total >= 45*2){
-			movement(pulse_Gen, 10);
+		if(pulse_Gen->total >= 24*25){
+			movement(pulse_Gen, 25);
 		}
 		else{	// total < 45*2
-			movement(pulse_Gen, 5);
+			//movement(pulse_Gen, 5);
+			pulse_Gen->next = 10;
 		}
 		// Position modify
 		if(pulse_Gen->current <= 1 && pulse_Gen->remain < 0){
@@ -62,14 +63,15 @@ void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses){
 
 void axes_init(void){
 	//Configure PWM Clock to match system
-	SysCtlPWMClockSet(SYSCTL_PWMDIV_64);
+//	SysCtlPWMClockSet(SYSCTL_PWMDIV_2);
 
 	// Enable the peripherals used by this program.
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER2);
-	GPIOPinTypeGPIOOutput(GPIOF_BASE, GPIO_PIN_3);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER3);
 
 	x_axis_Init();
 	y_axis_Init();
@@ -78,7 +80,10 @@ void axes_init(void){
 
 void movement(struct pulse_Gen_info *pulse_Gen, int max_speed){
 	int sum = 0;
-	for(int i=1; i<max_speed; sum+=i, i++);
+	for(int i=1; i<=max_speed; sum+=i, i++);
+	/*
+	 *  debug here
+	 */
 	if(pulse_Gen->remain > sum){
 		if(pulse_Gen->current < max_speed){
 			// Accelerate
@@ -131,12 +136,13 @@ void reverse(struct pulse_Gen_info *pulse_Gen){
 void set_dir(struct axis *axis, bool state){
 	if(state != false){
 		if(axis->dir == 'r' || axis->dir == 'u' || axis->dir == 'f')
-			GPIOPinWrite(GPIOF_BASE, axis->dir_pin, axis->dir_pin);
-		else GPIOPinWrite(GPIOF_BASE, axis->dir_pin, 0);
+			GPIOPinWrite(GPIOA_BASE, axis->dir_pin, axis->dir_pin);
+		else GPIOPinWrite(GPIOA_BASE, axis->dir_pin, 0);
 	}
 	else{
-		if(axis->dir == 'r') GPIOPinWrite(GPIOF_BASE, axis->dir_pin, 0);
-		else GPIOPinWrite(GPIOF_BASE, axis->dir_pin, axis->dir_pin);
+		if(axis->dir == 'r' || axis->dir == 'u' || axis->dir == 'f')
+			GPIOPinWrite(GPIOA_BASE, axis->dir_pin, 0);
+		else GPIOPinWrite(GPIOA_BASE, axis->dir_pin, axis->dir_pin);
 	}
 }
 

@@ -36,7 +36,7 @@ void rtos_Timer0_irq(void){
 
 	rtos_sched();
 
-	IntPriorityMaskSet(0x20);	//only looks at the upper 3 bits
+	IntPriorityMaskSet(0x40);	//only looks at the upper 3 bits
 	enable_os();
 }
 
