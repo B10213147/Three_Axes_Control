@@ -42,9 +42,8 @@ void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses){
 		if(pulse_Gen->total >= 24*25){
 			movement(pulse_Gen, 25);
 		}
-		else{	// total < 45*2
-			//movement(pulse_Gen, 5);
-			pulse_Gen->next = 10;
+		else{	// total < 600
+			movement(pulse_Gen, 10);
 		}
 		// Position modify
 		if(pulse_Gen->current <= 1 && pulse_Gen->remain < 0){
@@ -63,7 +62,7 @@ void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses){
 
 void axes_init(void){
 	//Configure PWM Clock to match system
-//	SysCtlPWMClockSet(SYSCTL_PWMDIV_2);
+	SysCtlPWMClockSet(SYSCTL_PWMDIV_2);
 
 	// Enable the peripherals used by this program.
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
@@ -80,10 +79,8 @@ void axes_init(void){
 
 void movement(struct pulse_Gen_info *pulse_Gen, int max_speed){
 	int sum = 0;
-	for(int i=1; i<=max_speed; sum+=i, i++);
-	/*
-	 *  debug here
-	 */
+	for(int i=1; i<max_speed; sum+=i, i++);
+
 	if(pulse_Gen->remain > sum){
 		if(pulse_Gen->current < max_speed){
 			// Accelerate
