@@ -19,7 +19,7 @@ int main(void) {
 
 	rtos_task_create(keys_driver, 0, 2);
 	rtos_task_create(uart_driver, 0, 3);
-	rtos_task_create(calculate_pos, 0, 1000);
+	rtos_task_create(calculate_pos, 0, 100);
 //	rtos_task_create(pwm_Y_GEN, 0, 1000);
 
 	point p1 = {0.1, 0.15};
