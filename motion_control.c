@@ -84,7 +84,10 @@ void calculate_pos(void){
 		}
 	}
 
-	if(is_z_at_Home == true &&
+	/*
+	 * x_axis & y_axis move
+	 */
+	if(is_z_at_Home == true && z_axis->pulse_Gen->finished != false &&
 			x_axis->pulse_Gen->finished != false &&
 			y_axis->pulse_Gen->finished != false &&
 			(x_axis->next_move*100 != 0 || y_axis->next_move*100 != 0)){
@@ -101,6 +104,9 @@ void calculate_pos(void){
 		y_axis->next_move = 0;
 	}
 
+	/*
+	 * z_axis move
+	 */
 	if(z_axis->pulse_Gen->finished != false &&
 			x_axis->pulse_Gen->finished != false &&
 			y_axis->pulse_Gen->finished != false &&
@@ -113,7 +119,6 @@ void calculate_pos(void){
 		z_axis->current_pos = next_pos;
 		z_axis->next_move = 0;
 	}
-
 }
 
 void move_P2P(point p1, point p2){
@@ -138,14 +143,12 @@ void move_P2P(point p1, point p2){
 		rtos_task_create(move_P2P, 0, 1);
 	}
 
-	if(is_z_at_Home == true){
-		axis_move(x_axis->pulse_Gen, dx);
-		axis_move(y_axis->pulse_Gen, dy);
+	axis_move(x_axis->pulse_Gen, dx);
+	axis_move(y_axis->pulse_Gen, dy);
 
-		if(x_axis->pulse_Gen->finished != false &&
-				y_axis->pulse_Gen->finished != false){
-			rtos_running_task->delete_flag = true;
-		}
+	if(x_axis->pulse_Gen->finished != false &&
+			y_axis->pulse_Gen->finished != false){
+		rtos_running_task->delete_flag = true;
 	}
 }
 
@@ -169,10 +172,10 @@ void drop_lift(float l1, float l2){
 
 	if(z_axis->pulse_Gen->finished != false){
 		rtos_running_task->delete_flag = true;
-
-		if(z_axis->current_pos*100 != 0){
-			is_z_at_Home = false;
-		}
-		else is_z_at_Home = true;
 	}
+
+	if(z_axis->current_pos*100 != 0){
+		is_z_at_Home = false;
+	}
+	else is_z_at_Home = true;
 }
