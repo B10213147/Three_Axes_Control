@@ -132,12 +132,12 @@ void reverse(struct pulse_Gen_info *pulse_Gen){
 //!	state == false means reverse
 void set_dir(struct axis *axis, bool state){
 	if(state != false){
-		if(axis->dir == 'r' || axis->dir == 'u' || axis->dir == 'f')
+		if(axis->dir == 'p' || axis->dir == 'u')
 			GPIOPinWrite(GPIOA_BASE, axis->dir_pin, axis->dir_pin);
 		else GPIOPinWrite(GPIOA_BASE, axis->dir_pin, 0);
 	}
 	else{
-		if(axis->dir == 'r' || axis->dir == 'u' || axis->dir == 'f')
+		if(axis->dir == 'p' || axis->dir == 'u')
 			GPIOPinWrite(GPIOA_BASE, axis->dir_pin, 0);
 		else GPIOPinWrite(GPIOA_BASE, axis->dir_pin, axis->dir_pin);
 	}
