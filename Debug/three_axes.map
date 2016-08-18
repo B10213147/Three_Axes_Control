@@ -1,0 +1,1729 @@
+Archive member included because of file (symbol)
+
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-exit.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp/crt0.o (exit)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-impure.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-exit.o) (_global_impure_ptr)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-init.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp/crt0.o (__libc_init_array)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-malloc.o)
+                              ./x_axis.o (malloc)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-malloc.o) (_malloc_r)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-memset.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp/crt0.o (memset)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mlock.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o) (__malloc_lock)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-sbrkr.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o) (_sbrk_r)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-exit.o) (__call_exitprocs)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-atexit.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o) (atexit)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-fini.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o) (__libc_fini_array)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-freer.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-malloc.o) (_free_r)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-reent.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-sbrkr.o) (errno)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__atexit.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-atexit.o) (__register_exitproc)
+C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                              ./rtos/keys_driver.o (GPIOPadConfigSet)
+C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                              ./rtos/rtos.o (IntMasterEnable)
+C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                              ./x_axis.o (PWMGenConfigure)
+C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                              ./bluetooth.o (SysCtlPeripheralReady)
+C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                              ./x_axis.o (TimerEnable)
+C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                              ./bluetooth.o (UARTEnable)
+C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+                              C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o) (CPUcpsid)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(sbrk.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-sbrkr.o) (_sbrk)
+c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(_exit.o)
+                              c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-exit.o) (_exit)
+
+Allocating common symbols
+Common symbol       size              file
+
+z_axis              0x4               ./three_axes.o
+rtos_recursive_counter
+                    0x4               ./rtos/rtos.o
+bt_rx_Fifo          0x4               ./bluetooth.o
+errno               0x4               c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-reent.o)
+y_scale             0x4               ./motion_control.o
+rtos_running_task   0x4               ./rtos/rtos_task.o
+pulse_Fifo          0x4               ./rtos/pulse_train.o
+rtos_ready_tasks    0x4               ./rtos/rtos_task.o
+x_axis              0x4               ./three_axes.o
+x_scale             0x4               ./motion_control.o
+Axis_y              0xc               ./motion_control.o
+uart_rx_Fifo        0x4               ./rtos/uart_driver.o
+bt_tx_Fifo          0x4               ./bluetooth.o
+Axis_x              0xc               ./motion_control.o
+latch               0x1               ./rtos/pulse_train.o
+slice_quantum       0x4               ./rtos/rtos.o
+y_axis              0x4               ./three_axes.o
+uart_tx_Fifo        0x4               ./rtos/uart_driver.o
+keys_Fifo           0x4               ./rtos/keys_driver.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x00000000         0x00040000         xr
+SRAM             0x20000000         0x00008000         xw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crti.o
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp/crt0.o
+LOAD ./bluetooth.o
+LOAD ./main.o
+LOAD ./motion_control.o
+LOAD ./system_TM4C123.o
+LOAD ./three_axes.o
+LOAD ./tm4c123gh6pm_startup_ccs_gcc.o
+LOAD ./x_axis.o
+LOAD ./y_axis.o
+LOAD ./z_axis.o
+LOAD ./rtos/keys_driver.o
+LOAD ./rtos/pulse_train.o
+LOAD ./rtos/rtos.o
+LOAD ./rtos/rtos_pipe.o
+LOAD ./rtos/rtos_sched.o
+LOAD ./rtos/rtos_task.o
+LOAD ./rtos/uart_driver.o
+                0x00000000                PROVIDE (_intvecs_base_address, 0x0)
+
+.intvecs        0x00000000      0x26c
+ *(.intvecs)
+ .intvecs       0x00000000      0x26c ./tm4c123gh6pm_startup_ccs_gcc.o
+                0x00000000                g_pfnVectors
+                0x20000000                PROVIDE (_vtable_base_address, 0x20000000)
+
+.vtable
+ *(.vtable)
+
+.text           0x0000026c     0x426c
+ CREATE_OBJECT_SYMBOLS
+ *(.text)
+ .text          0x0000026c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crti.o
+ .text          0x0000026c       0x5c c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+ .text          0x000002c8       0x74 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp/crt0.o
+                0x000002c8                _start
+                0x000002c8                _mainCRTStartup
+ .text          0x0000033c        0x0 ./bluetooth.o
+ .text          0x0000033c        0x0 ./main.o
+ .text          0x0000033c        0x0 ./motion_control.o
+ .text          0x0000033c        0x0 ./system_TM4C123.o
+ .text          0x0000033c        0x0 ./three_axes.o
+ .text          0x0000033c        0x0 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .text          0x0000033c        0x0 ./x_axis.o
+ .text          0x0000033c        0x0 ./y_axis.o
+ .text          0x0000033c        0x0 ./z_axis.o
+ .text          0x0000033c        0x0 ./rtos/keys_driver.o
+ .text          0x0000033c        0x0 ./rtos/pulse_train.o
+ .text          0x0000033c        0x0 ./rtos/rtos.o
+ .text          0x0000033c        0x0 ./rtos/rtos_pipe.o
+ .text          0x0000033c        0x0 ./rtos/rtos_sched.o
+ .text          0x0000033c        0x0 ./rtos/rtos_task.o
+ .text          0x0000033c        0x0 ./rtos/uart_driver.o
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-exit.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-impure.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-init.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-malloc.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-memset.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mlock.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-sbrkr.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-atexit.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-fini.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-freer.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-reent.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__atexit.o)
+ .text          0x0000033c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+ .text          0x0000033c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .text          0x0000033c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+ .text          0x0000033c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+ .text          0x0000033c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+ .text          0x0000033c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+ .text          0x0000033c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(sbrk.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(_exit.o)
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtend.o
+ .text          0x0000033c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtn.o
+ *(.text.*)
+ .text.bluetooth_driver
+                0x0000033c       0x74 ./bluetooth.o
+                0x0000033c                bluetooth_driver
+ .text.bluetooth_init
+                0x000003b0       0x94 ./bluetooth.o
+                0x000003b0                bluetooth_init
+ .text.main     0x00000444       0xd8 ./main.o
+                0x00000444                main
+ .text.print_string
+                0x0000051c       0x3c ./main.o
+                0x0000051c                print_string
+ .text.startup  0x00000558       0x28 ./main.o
+                0x00000558                startup
+ .text.Axis_Config
+                0x00000580       0xac ./motion_control.o
+                0x00000580                Axis_Config
+ .text.move_P2P
+                0x0000062c       0xe4 ./motion_control.o
+                0x0000062c                move_P2P
+ .text.getOscClk
+                0x00000710      0x198 ./system_TM4C123.o
+ .text.SystemCoreClockUpdate
+                0x000008a8      0x114 ./system_TM4C123.o
+                0x000008a8                SystemCoreClockUpdate
+ .text.SystemInit
+                0x000009bc       0xcc ./system_TM4C123.o
+                0x000009bc                SystemInit
+ .text.axis_move
+                0x00000a88       0xe8 ./three_axes.o
+                0x00000a88                axis_move
+ .text.axes_init
+                0x00000b70       0x50 ./three_axes.o
+                0x00000b70                axes_init
+ .text.movement
+                0x00000bc0       0x78 ./three_axes.o
+                0x00000bc0                movement
+ .text.pulse_Generator
+                0x00000c38       0x84 ./three_axes.o
+                0x00000c38                pulse_Generator
+ .text.reverse  0x00000cbc       0x78 ./three_axes.o
+                0x00000cbc                reverse
+ .text.set_dir  0x00000d34       0x94 ./three_axes.o
+                0x00000d34                set_dir
+ .text.ResetISR
+                0x00000dc8       0x68 ./tm4c123gh6pm_startup_ccs_gcc.o
+                0x00000dc8                ResetISR
+ .text.NmiSR    0x00000e30        0x8 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .text.FaultISR
+                0x00000e38        0x8 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .text.IntDefaultHandler
+                0x00000e40        0x8 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .text.x_axis_Init
+                0x00000e48       0xc8 ./x_axis.o
+                0x00000e48                x_axis_Init
+ .text.x_pwm_Start
+                0x00000f10       0x88 ./x_axis.o
+                0x00000f10                x_pwm_Start
+ .text.x_timer_End
+                0x00000f98       0x4c ./x_axis.o
+                0x00000f98                x_timer_End
+ .text.y_axis_Init
+                0x00000fe4       0xbc ./y_axis.o
+                0x00000fe4                y_axis_Init
+ .text.y_pwm_Start
+                0x000010a0       0x94 ./y_axis.o
+                0x000010a0                y_pwm_Start
+ .text.y_timer_End
+                0x00001134       0x50 ./y_axis.o
+                0x00001134                y_timer_End
+ .text.z_axis_Init
+                0x00001184       0x34 ./z_axis.o
+                0x00001184                z_axis_Init
+ .text.z_pwm_Start
+                0x000011b8        0xc ./z_axis.o
+                0x000011b8                z_pwm_Start
+ .text.z_timer_End
+                0x000011c4        0xc ./z_axis.o
+                0x000011c4                z_timer_End
+ .text.keys_driver
+                0x000011d0       0x80 ./rtos/keys_driver.o
+                0x000011d0                keys_driver
+ .text.keys_driver_init
+                0x00001250       0x70 ./rtos/keys_driver.o
+                0x00001250                keys_driver_init
+ .text.pulse_train
+                0x000012c0      0x154 ./rtos/pulse_train.o
+                0x000012c0                pulse_train
+ .text.pulse_train_init
+                0x00001414       0x6c ./rtos/pulse_train.o
+                0x00001414                pulse_train_init
+ .text.enable_os
+                0x00001480       0x28 ./rtos/rtos.o
+                0x00001480                enable_os
+ .text.disable_os
+                0x000014a8       0x28 ./rtos/rtos.o
+                0x000014a8                disable_os
+ .text.rtos_Timer0_irq
+                0x000014d0       0x34 ./rtos/rtos.o
+                0x000014d0                rtos_Timer0_irq
+ .text.rtos_init
+                0x00001504       0xa4 ./rtos/rtos.o
+                0x00001504                rtos_init
+ .text.rtos_pipe_read
+                0x000015a8       0x68 ./rtos/rtos_pipe.o
+                0x000015a8                rtos_pipe_read
+ .text.rtos_pipe_write
+                0x00001610       0x6c ./rtos/rtos_pipe.o
+                0x00001610                rtos_pipe_write
+ .text.rtos_pipe_create
+                0x0000167c       0x48 ./rtos/rtos_pipe.o
+                0x0000167c                rtos_pipe_create
+ .text.rtos_pipe_delete
+                0x000016c4       0x28 ./rtos/rtos_pipe.o
+                0x000016c4                rtos_pipe_delete
+ .text.rtos_sched_run
+                0x000016ec       0x74 ./rtos/rtos_sched.o
+                0x000016ec                rtos_sched_run
+ .text.rtos_sched_list_update
+                0x00001760       0x88 ./rtos/rtos_sched.o
+                0x00001760                rtos_sched_list_update
+ .text.rtos_sched_remove
+                0x000017e8       0x34 ./rtos/rtos_sched.o
+                0x000017e8                rtos_sched_remove
+ .text.rtos_sched
+                0x0000181c       0x38 ./rtos/rtos_sched.o
+                0x0000181c                rtos_sched
+ .text.rtos_task_create
+                0x00001854       0x50 ./rtos/rtos_task.o
+                0x00001854                rtos_task_create
+ .text.rtos_task_delete
+                0x000018a4       0x1c ./rtos/rtos_task.o
+                0x000018a4                rtos_task_delete
+ .text.rtos_task_insert
+                0x000018c0       0x24 ./rtos/rtos_task.o
+                0x000018c0                rtos_task_insert
+ .text.rtos_task_remove
+                0x000018e4       0x5c ./rtos/rtos_task.o
+                0x000018e4                rtos_task_remove
+ .text.uart_driver
+                0x00001940       0x74 ./rtos/uart_driver.o
+                0x00001940                uart_driver
+ .text.uart_driver_init
+                0x000019b4       0x7c ./rtos/uart_driver.o
+                0x000019b4                uart_driver_init
+ .text.exit     0x00001a30       0x20 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-exit.o)
+                0x00001a30                exit
+ .text.__libc_init_array
+                0x00001a50       0x50 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-init.o)
+                0x00001a50                __libc_init_array
+ .text.malloc   0x00001aa0       0x10 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-malloc.o)
+                0x00001aa0                malloc
+ .text.free     0x00001ab0       0x10 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-malloc.o)
+                0x00001ab0                free
+ .text._malloc_r
+                0x00001ac0      0x524 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+                0x00001ac0                _malloc_r
+ .text.memset   0x00001fe4       0x9c c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-memset.o)
+                0x00001fe4                memset
+ .text.__malloc_lock
+                0x00002080        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mlock.o)
+                0x00002080                __malloc_lock
+ .text.__malloc_unlock
+                0x00002084        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mlock.o)
+                0x00002084                __malloc_unlock
+ .text._sbrk_r  0x00002088       0x24 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-sbrkr.o)
+                0x00002088                _sbrk_r
+ .text.startup.register_fini
+                0x000020ac       0x14 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o)
+ .text.__call_exitprocs
+                0x000020c0       0xd4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o)
+                0x000020c0                __call_exitprocs
+ .text.atexit   0x00002194        0xc c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-atexit.o)
+                0x00002194                atexit
+ .text.__libc_fini_array
+                0x000021a0       0x2c c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-fini.o)
+                0x000021a0                __libc_fini_array
+ .text._malloc_trim_r
+                0x000021cc       0x9c c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-freer.o)
+                0x000021cc                _malloc_trim_r
+ .text._free_r  0x00002268      0x1b0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-freer.o)
+                0x00002268                _free_r
+ .text.cleanup_glue
+                0x00002418       0x1c c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-reent.o)
+                0x00002418                cleanup_glue
+ .text._reclaim_reent
+                0x00002434       0x88 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-reent.o)
+                0x00002434                _reclaim_reent
+ .text.__register_exitproc
+                0x000024bc       0xa4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__atexit.o)
+                0x000024bc                __register_exitproc
+ .text._GPIOIntNumberGet
+                0x00002560       0x48 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+ .text.GPIODirModeSet
+                0x000025a8       0x2e C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000025a8                GPIODirModeSet
+ .text.GPIODirModeGet
+                0x000025d6       0x24 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000025d6                GPIODirModeGet
+ .text.GPIOIntTypeSet
+                0x000025fa       0x62 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000025fa                GPIOIntTypeSet
+ .text.GPIOIntTypeGet
+                0x0000265c       0x42 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x0000265c                GPIOIntTypeGet
+ .text.GPIOPadConfigSet
+                0x0000269e      0x14e C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x0000269e                GPIOPadConfigSet
+ .text.GPIOPadConfigGet
+                0x000027ec       0xbc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000027ec                GPIOPadConfigGet
+ .text.GPIOIntEnable
+                0x000028a8        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000028a8                GPIOIntEnable
+ .text.GPIOIntDisable
+                0x000028b4        0xe C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000028b4                GPIOIntDisable
+ .text.GPIOIntStatus
+                0x000028c2        0xe C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000028c2                GPIOIntStatus
+ .text.GPIOIntClear
+                0x000028d0        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000028d0                GPIOIntClear
+ .text.GPIOIntRegister
+                0x000028d6       0x1a C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000028d6                GPIOIntRegister
+ .text.GPIOIntUnregister
+                0x000028f0       0x16 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000028f0                GPIOIntUnregister
+ .text.GPIOPinRead
+                0x00002906        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002906                GPIOPinRead
+ .text.GPIOPinWrite
+                0x0000290c        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x0000290c                GPIOPinWrite
+ .text.GPIOPinTypeADC
+                0x00002912       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002912                GPIOPinTypeADC
+ .text.GPIOPinTypeCAN
+                0x0000292e       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x0000292e                GPIOPinTypeCAN
+ .text.GPIOPinTypeComparator
+                0x0000294a       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x0000294a                GPIOPinTypeComparator
+ .text.GPIOPinTypeComparatorOutput
+                0x00002966       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002966                GPIOPinTypeComparatorOutput
+ .text.GPIOPinTypeDIVSCLK
+                0x00002982       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002982                GPIOPinTypeDIVSCLK
+ .text.GPIOPinTypeEPI
+                0x0000299e       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x0000299e                GPIOPinTypeEPI
+ .text.GPIOPinTypeEthernetLED
+                0x000029ba       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000029ba                GPIOPinTypeEthernetLED
+ .text.GPIOPinTypeEthernetMII
+                0x000029d6       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000029d6                GPIOPinTypeEthernetMII
+ .text.GPIOPinTypeGPIOInput
+                0x000029f2       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x000029f2                GPIOPinTypeGPIOInput
+ .text.GPIOPinTypeGPIOOutput
+                0x00002a0e       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002a0e                GPIOPinTypeGPIOOutput
+ .text.GPIOPinTypeGPIOOutputOD
+                0x00002a2a       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002a2a                GPIOPinTypeGPIOOutputOD
+ .text.GPIOPinTypeHibernateRTCCLK
+                0x00002a46       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002a46                GPIOPinTypeHibernateRTCCLK
+ .text.GPIOPinTypeI2C
+                0x00002a62       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002a62                GPIOPinTypeI2C
+ .text.GPIOPinTypeI2CSCL
+                0x00002a7e       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002a7e                GPIOPinTypeI2CSCL
+ .text.GPIOPinTypeLCD
+                0x00002a9a       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002a9a                GPIOPinTypeLCD
+ .text.GPIOPinTypeOneWire
+                0x00002ab6       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002ab6                GPIOPinTypeOneWire
+ .text.GPIOPinTypePWM
+                0x00002ad2       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002ad2                GPIOPinTypePWM
+ .text.GPIOPinTypeQEI
+                0x00002aee       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002aee                GPIOPinTypeQEI
+ .text.GPIOPinTypeSSI
+                0x00002b0a       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002b0a                GPIOPinTypeSSI
+ .text.GPIOPinTypeTimer
+                0x00002b26       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002b26                GPIOPinTypeTimer
+ .text.GPIOPinTypeTrace
+                0x00002b42       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002b42                GPIOPinTypeTrace
+ .text.GPIOPinTypeUART
+                0x00002b5e       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002b5e                GPIOPinTypeUART
+ .text.GPIOPinTypeUSBAnalog
+                0x00002b7a       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002b7a                GPIOPinTypeUSBAnalog
+ .text.GPIOPinTypeUSBDigital
+                0x00002b96       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002b96                GPIOPinTypeUSBDigital
+ .text.GPIOPinTypeWakeHigh
+                0x00002bb2       0x1e C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002bb2                GPIOPinTypeWakeHigh
+ .text.GPIOPinTypeWakeLow
+                0x00002bd0       0x1e C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002bd0                GPIOPinTypeWakeLow
+ .text.GPIOPinWakeStatus
+                0x00002bee        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002bee                GPIOPinWakeStatus
+ .text.GPIOPinConfigure
+                0x00002bf4       0x4c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002bf4                GPIOPinConfigure
+ .text.GPIODMATriggerEnable
+                0x00002c40        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002c40                GPIODMATriggerEnable
+ .text.GPIODMATriggerDisable
+                0x00002c4c        0xe C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002c4c                GPIODMATriggerDisable
+ .text.GPIOADCTriggerEnable
+                0x00002c5a        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002c5a                GPIOADCTriggerEnable
+ .text.GPIOADCTriggerDisable
+                0x00002c66        0xe C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                0x00002c66                GPIOADCTriggerDisable
+ .text._IntDefaultHandler
+                0x00002c74        0x2 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .text.IntMasterEnable
+                0x00002c76        0xe C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002c76                IntMasterEnable
+ .text.IntMasterDisable
+                0x00002c84        0xe C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002c84                IntMasterDisable
+ *fill*         0x00002c92        0x2 
+ .text.IntRegister
+                0x00002c94       0x30 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002c94                IntRegister
+ .text.IntUnregister
+                0x00002cc4       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002cc4                IntUnregister
+ .text.IntPriorityGroupingSet
+                0x00002cd8       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002cd8                IntPriorityGroupingSet
+ .text.IntPriorityGroupingGet
+                0x00002cf4       0x24 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002cf4                IntPriorityGroupingGet
+ .text.IntPrioritySet
+                0x00002d18       0x28 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002d18                IntPrioritySet
+ .text.IntPriorityGet
+                0x00002d40       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002d40                IntPriorityGet
+ .text.IntEnable
+                0x00002d5c       0x60 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002d5c                IntEnable
+ .text.IntDisable
+                0x00002dbc       0x60 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002dbc                IntDisable
+ .text.IntIsEnabled
+                0x00002e1c       0x64 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002e1c                IntIsEnabled
+ .text.IntPendSet
+                0x00002e80       0x50 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002e80                IntPendSet
+ .text.IntPendClear
+                0x00002ed0       0x40 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002ed0                IntPendClear
+ .text.IntPriorityMaskSet
+                0x00002f10        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002f10                IntPriorityMaskSet
+ .text.IntPriorityMaskGet
+                0x00002f14        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002f14                IntPriorityMaskGet
+ .text.IntTrigger
+                0x00002f18        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x00002f18                IntTrigger
+ .text._PWMGenIntNumberGet
+                0x00002f24      0x120 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+ .text._PWMFaultIntNumberGet
+                0x00003044       0x50 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+ .text.PWMGenConfigure
+                0x00003094       0x34 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003094                PWMGenConfigure
+ .text.PWMGenPeriodSet
+                0x000030c8       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000030c8                PWMGenPeriodSet
+ .text.PWMGenPeriodGet
+                0x000030dc       0x18 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000030dc                PWMGenPeriodGet
+ .text.PWMGenEnable
+                0x000030f4        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000030f4                PWMGenEnable
+ .text.PWMGenDisable
+                0x000030fe        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000030fe                PWMGenDisable
+ .text.PWMPulseWidthSet
+                0x00003108       0x22 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003108                PWMPulseWidthSet
+ .text.PWMPulseWidthGet
+                0x0000312a       0x24 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000312a                PWMPulseWidthGet
+ .text.PWMDeadBandEnable
+                0x0000314e       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000314e                PWMDeadBandEnable
+ .text.PWMDeadBandDisable
+                0x0000315e        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000315e                PWMDeadBandDisable
+ .text.PWMSyncUpdate
+                0x0000316a        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000316a                PWMSyncUpdate
+ .text.PWMSyncTimeBase
+                0x0000316e        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000316e                PWMSyncTimeBase
+ .text.PWMOutputState
+                0x00003172       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003172                PWMOutputState
+ .text.PWMOutputInvert
+                0x00003186       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003186                PWMOutputInvert
+ .text.PWMOutputFaultLevel
+                0x0000319a       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000319a                PWMOutputFaultLevel
+ .text.PWMOutputFault
+                0x000031ae       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000031ae                PWMOutputFault
+ .text.PWMGenIntRegister
+                0x000031c2       0x1a C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000031c2                PWMGenIntRegister
+ .text.PWMGenIntUnregister
+                0x000031dc       0x16 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000031dc                PWMGenIntUnregister
+ .text.PWMFaultIntRegister
+                0x000031f2       0x1a C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000031f2                PWMFaultIntRegister
+ .text.PWMFaultIntUnregister
+                0x0000320c       0x16 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000320c                PWMFaultIntUnregister
+ .text.PWMGenIntTrigEnable
+                0x00003222        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003222                PWMGenIntTrigEnable
+ .text.PWMGenIntTrigDisable
+                0x0000322c        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000322c                PWMGenIntTrigDisable
+ .text.PWMGenIntStatus
+                0x00003238        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003238                PWMGenIntStatus
+ .text.PWMGenIntClear
+                0x00003244        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003244                PWMGenIntClear
+ .text.PWMIntEnable
+                0x0000324a        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000324a                PWMIntEnable
+ .text.PWMIntDisable
+                0x00003252        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003252                PWMIntDisable
+ .text.PWMFaultIntClear
+                0x0000325c        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000325c                PWMFaultIntClear
+ .text.PWMIntStatus
+                0x00003264        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003264                PWMIntStatus
+ .text.PWMFaultIntClearExt
+                0x0000326e        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000326e                PWMFaultIntClearExt
+ .text.PWMGenFaultConfigure
+                0x00003272       0x18 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003272                PWMGenFaultConfigure
+ .text.PWMGenFaultTriggerSet
+                0x0000328a        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x0000328a                PWMGenFaultTriggerSet
+ .text.PWMGenFaultTriggerGet
+                0x00003296        0xe C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003296                PWMGenFaultTriggerGet
+ .text.PWMGenFaultStatus
+                0x000032a4       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000032a4                PWMGenFaultStatus
+ .text.PWMGenFaultClear
+                0x000032c0       0x18 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000032c0                PWMGenFaultClear
+ .text.PWMClockSet
+                0x000032d8       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000032d8                PWMClockSet
+ .text.PWMClockGet
+                0x000032ec       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x000032ec                PWMClockGet
+ .text.PWMOutputUpdateMode
+                0x00003308       0x32 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+                0x00003308                PWMOutputUpdateMode
+ *fill*         0x0000333a        0x2 
+ .text._SysCtlMemTimingGet
+                0x0000333c       0x24 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+ .text.SysCtlSRAMSizeGet
+                0x00003360       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003360                SysCtlSRAMSizeGet
+ .text.SysCtlFlashSizeGet
+                0x00003370       0x40 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003370                SysCtlFlashSizeGet
+ .text.SysCtlFlashSectorSizeGet
+                0x000033b0       0x3c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000033b0                SysCtlFlashSectorSizeGet
+ .text.SysCtlPeripheralPresent
+                0x000033ec       0x34 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000033ec                SysCtlPeripheralPresent
+ .text.SysCtlPeripheralReady
+                0x00003420       0x34 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003420                SysCtlPeripheralReady
+ .text.SysCtlPeripheralPowerOn
+                0x00003454       0x30 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003454                SysCtlPeripheralPowerOn
+ .text.SysCtlPeripheralPowerOff
+                0x00003484       0x30 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003484                SysCtlPeripheralPowerOff
+ .text.SysCtlPeripheralReset
+                0x000034b4       0x48 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000034b4                SysCtlPeripheralReset
+ .text.SysCtlPeripheralEnable
+                0x000034fc       0x30 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000034fc                SysCtlPeripheralEnable
+ .text.SysCtlPeripheralDisable
+                0x0000352c       0x30 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x0000352c                SysCtlPeripheralDisable
+ .text.SysCtlPeripheralSleepEnable
+                0x0000355c       0x30 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x0000355c                SysCtlPeripheralSleepEnable
+ .text.SysCtlPeripheralSleepDisable
+                0x0000358c       0x30 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x0000358c                SysCtlPeripheralSleepDisable
+ .text.SysCtlPeripheralDeepSleepEnable
+                0x000035bc       0x30 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000035bc                SysCtlPeripheralDeepSleepEnable
+ .text.SysCtlPeripheralDeepSleepDisable
+                0x000035ec       0x30 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000035ec                SysCtlPeripheralDeepSleepDisable
+ .text.SysCtlPeripheralClockGating
+                0x0000361c       0x50 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x0000361c                SysCtlPeripheralClockGating
+ .text.SysCtlIntRegister
+                0x0000366c       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x0000366c                SysCtlIntRegister
+ .text.SysCtlIntUnregister
+                0x00003680       0x12 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003680                SysCtlIntUnregister
+ *fill*         0x00003692        0x2 
+ .text.SysCtlIntEnable
+                0x00003694       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003694                SysCtlIntEnable
+ .text.SysCtlIntDisable
+                0x000036a4       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000036a4                SysCtlIntDisable
+ .text.SysCtlIntClear
+                0x000036b4        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000036b4                SysCtlIntClear
+ .text.SysCtlIntStatus
+                0x000036c0       0x18 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000036c0                SysCtlIntStatus
+ .text.SysCtlLDOSleepSet
+                0x000036d8        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000036d8                SysCtlLDOSleepSet
+ .text.SysCtlLDOSleepGet
+                0x000036e4        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000036e4                SysCtlLDOSleepGet
+ .text.SysCtlLDODeepSleepSet
+                0x000036f0        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000036f0                SysCtlLDODeepSleepSet
+ .text.SysCtlLDODeepSleepGet
+                0x000036fc        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000036fc                SysCtlLDODeepSleepGet
+ .text.SysCtlSleepPowerSet
+                0x00003708        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003708                SysCtlSleepPowerSet
+ .text.SysCtlDeepSleepPowerSet
+                0x00003714        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003714                SysCtlDeepSleepPowerSet
+ .text.SysCtlReset
+                0x00003720       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003720                SysCtlReset
+ .text.SysCtlSleep
+                0x00003730        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003730                SysCtlSleep
+ .text.SysCtlDeepSleep
+                0x00003734       0x20 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003734                SysCtlDeepSleep
+ .text.SysCtlResetCauseGet
+                0x00003754        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003754                SysCtlResetCauseGet
+ .text.SysCtlResetCauseClear
+                0x00003760       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003760                SysCtlResetCauseClear
+ .text.SysCtlDelay
+                0x00003770        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003770                SysCtlDelay
+ *fill*         0x00003776        0x2 
+ .text.SysCtlMOSCConfigSet
+                0x00003778        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003778                SysCtlMOSCConfigSet
+ .text.SysCtlPIOSCCalibrate
+                0x00003784       0x54 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003784                SysCtlPIOSCCalibrate
+ .text.SysCtlResetBehaviorSet
+                0x000037d8        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000037d8                SysCtlResetBehaviorSet
+ .text.SysCtlResetBehaviorGet
+                0x000037e4        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000037e4                SysCtlResetBehaviorGet
+ .text.SysCtlClockFreqSet
+                0x000037f0      0x264 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x000037f0                SysCtlClockFreqSet
+ .text.SysCtlClockSet
+                0x00003a54      0x128 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003a54                SysCtlClockSet
+ .text.SysCtlClockGet
+                0x00003b7c      0x14c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003b7c                SysCtlClockGet
+ .text.SysCtlDeepSleepClockSet
+                0x00003cc8        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003cc8                SysCtlDeepSleepClockSet
+ .text.SysCtlDeepSleepClockConfigSet
+                0x00003cd4       0x68 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003cd4                SysCtlDeepSleepClockConfigSet
+ .text.SysCtlPWMClockSet
+                0x00003d3c       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003d3c                SysCtlPWMClockSet
+ .text.SysCtlPWMClockGet
+                0x00003d50       0x18 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003d50                SysCtlPWMClockGet
+ .text.SysCtlGPIOAHBEnable
+                0x00003d68       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003d68                SysCtlGPIOAHBEnable
+ .text.SysCtlGPIOAHBDisable
+                0x00003d84       0x1c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003d84                SysCtlGPIOAHBDisable
+ .text.SysCtlUSBPLLEnable
+                0x00003da0       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003da0                SysCtlUSBPLLEnable
+ .text.SysCtlUSBPLLDisable
+                0x00003db0       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003db0                SysCtlUSBPLLDisable
+ .text.SysCtlVoltageEventConfig
+                0x00003dc0        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003dc0                SysCtlVoltageEventConfig
+ .text.SysCtlVoltageEventStatus
+                0x00003dcc        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003dcc                SysCtlVoltageEventStatus
+ .text.SysCtlVoltageEventClear
+                0x00003dd8       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003dd8                SysCtlVoltageEventClear
+ .text.SysCtlNMIStatus
+                0x00003de8        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003de8                SysCtlNMIStatus
+ .text.SysCtlNMIClear
+                0x00003df4       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003df4                SysCtlNMIClear
+ .text.SysCtlClockOutConfig
+                0x00003e04       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003e04                SysCtlClockOutConfig
+ .text.SysCtlAltClkConfig
+                0x00003e18        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+                0x00003e18                SysCtlAltClkConfig
+ .text._TimerIntNumberGet
+                0x00003e24       0x54 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+ .text.TimerEnable
+                0x00003e78       0x12 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003e78                TimerEnable
+ .text.TimerDisable
+                0x00003e8a       0x12 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003e8a                TimerDisable
+ .text.TimerConfigure
+                0x00003e9c       0x64 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003e9c                TimerConfigure
+ .text.TimerControlLevel
+                0x00003f00       0x20 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003f00                TimerControlLevel
+ .text.TimerControlTrigger
+                0x00003f20       0x5c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003f20                TimerControlTrigger
+ .text.TimerControlEvent
+                0x00003f7c       0x18 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003f7c                TimerControlEvent
+ .text.TimerControlStall
+                0x00003f94       0x20 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003f94                TimerControlStall
+ .text.TimerControlWaitOnTrigger
+                0x00003fb4       0x34 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003fb4                TimerControlWaitOnTrigger
+ .text.TimerRTCEnable
+                0x00003fe8        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003fe8                TimerRTCEnable
+ .text.TimerRTCDisable
+                0x00003ff2        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003ff2                TimerRTCDisable
+ .text.TimerClockSourceSet
+                0x00003ffc        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00003ffc                TimerClockSourceSet
+ .text.TimerClockSourceGet
+                0x00004002        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004002                TimerClockSourceGet
+ .text.TimerPrescaleSet
+                0x00004008       0x12 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004008                TimerPrescaleSet
+ .text.TimerPrescaleGet
+                0x0000401a        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x0000401a                TimerPrescaleGet
+ .text.TimerPrescaleMatchSet
+                0x00004024       0x12 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004024                TimerPrescaleMatchSet
+ .text.TimerPrescaleMatchGet
+                0x00004036        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004036                TimerPrescaleMatchGet
+ .text.TimerLoadSet
+                0x00004040       0x12 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004040                TimerLoadSet
+ .text.TimerLoadGet
+                0x00004052        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004052                TimerLoadGet
+ .text.TimerLoadSet64
+                0x0000405c        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x0000405c                TimerLoadSet64
+ .text.TimerLoadGet64
+                0x00004062       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004062                TimerLoadGet64
+ .text.TimerValueGet
+                0x00004076        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004076                TimerValueGet
+ .text.TimerValueGet64
+                0x00004080       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004080                TimerValueGet64
+ .text.TimerMatchSet
+                0x00004094       0x12 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004094                TimerMatchSet
+ .text.TimerMatchGet
+                0x000040a6        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x000040a6                TimerMatchGet
+ .text.TimerMatchSet64
+                0x000040b0        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x000040b0                TimerMatchSet64
+ .text.TimerMatchGet64
+                0x000040b6       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x000040b6                TimerMatchGet64
+ .text.TimerIntRegister
+                0x000040ca       0x1a C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x000040ca                TimerIntRegister
+ .text.TimerIntUnregister
+                0x000040e4       0x16 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x000040e4                TimerIntUnregister
+ .text.TimerIntEnable
+                0x000040fa        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x000040fa                TimerIntEnable
+ .text.TimerIntDisable
+                0x00004102        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004102                TimerIntDisable
+ .text.TimerIntStatus
+                0x0000410c        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x0000410c                TimerIntStatus
+ .text.TimerIntClear
+                0x00004116        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004116                TimerIntClear
+ .text.TimerSynchronize
+                0x0000411a        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x0000411a                TimerSynchronize
+ .text.TimerADCEventSet
+                0x0000411e        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x0000411e                TimerADCEventSet
+ .text.TimerADCEventGet
+                0x00004122        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004122                TimerADCEventGet
+ .text.TimerDMAEventSet
+                0x00004126        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x00004126                TimerDMAEventSet
+ .text.TimerDMAEventGet
+                0x0000412a        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x0000412a                TimerDMAEventGet
+ .text.TimerUpdateMode
+                0x0000412e       0x2a C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+                0x0000412e                TimerUpdateMode
+ .text._UARTIntNumberGet
+                0x00004158       0x48 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+ .text.UARTParityModeSet
+                0x000041a0        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000041a0                UARTParityModeSet
+ .text.UARTParityModeGet
+                0x000041ac        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000041ac                UARTParityModeGet
+ .text.UARTFIFOLevelSet
+                0x000041b4        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000041b4                UARTFIFOLevelSet
+ .text.UARTFIFOLevelGet
+                0x000041ba       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000041ba                UARTFIFOLevelGet
+ .text.UARTConfigGetExpClk
+                0x000041ca       0x28 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000041ca                UARTConfigGetExpClk
+ .text.UARTEnable
+                0x000041f2       0x16 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000041f2                UARTEnable
+ .text.UARTDisable
+                0x00004208       0x1e C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004208                UARTDisable
+ .text.UARTConfigSetExpClk
+                0x00004226       0x4e C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004226                UARTConfigSetExpClk
+ .text.UARTFIFOEnable
+                0x00004274        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004274                UARTFIFOEnable
+ .text.UARTFIFODisable
+                0x0000427e        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x0000427e                UARTFIFODisable
+ .text.UARTEnableSIR
+                0x00004288       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004288                UARTEnableSIR
+ .text.UARTDisableSIR
+                0x0000429c        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x0000429c                UARTDisableSIR
+ .text.UARTSmartCardEnable
+                0x000042a6       0x16 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000042a6                UARTSmartCardEnable
+ .text.UARTSmartCardDisable
+                0x000042bc        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000042bc                UARTSmartCardDisable
+ .text.UARTModemControlSet
+                0x000042c6        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000042c6                UARTModemControlSet
+ .text.UARTModemControlClear
+                0x000042d2        0xe C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000042d2                UARTModemControlClear
+ .text.UARTModemControlGet
+                0x000042e0        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000042e0                UARTModemControlGet
+ .text.UARTModemStatusGet
+                0x000042e8        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000042e8                UARTModemStatusGet
+ .text.UARTFlowControlSet
+                0x000042f4        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000042f4                UARTFlowControlSet
+ .text.UARTFlowControlGet
+                0x00004300        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004300                UARTFlowControlGet
+ .text.UARTTxIntModeSet
+                0x00004308        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004308                UARTTxIntModeSet
+ .text.UARTTxIntModeGet
+                0x00004314        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004314                UARTTxIntModeGet
+ .text.UARTCharsAvail
+                0x0000431c       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x0000431c                UARTCharsAvail
+ .text.UARTSpaceAvail
+                0x0000432c       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x0000432c                UARTSpaceAvail
+ .text.UARTCharGetNonBlocking
+                0x0000433c       0x10 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x0000433c                UARTCharGetNonBlocking
+ .text.UARTCharGet
+                0x0000434c        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x0000434c                UARTCharGet
+ .text.UARTCharPutNonBlocking
+                0x00004358       0x12 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004358                UARTCharPutNonBlocking
+ .text.UARTCharPut
+                0x0000436a        0xc C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x0000436a                UARTCharPut
+ .text.UARTBreakCtl
+                0x00004376       0x18 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004376                UARTBreakCtl
+ .text.UARTBusy
+                0x0000438e        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x0000438e                UARTBusy
+ .text.UARTIntRegister
+                0x00004396       0x1a C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004396                UARTIntRegister
+ .text.UARTIntUnregister
+                0x000043b0       0x16 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000043b0                UARTIntUnregister
+ .text.UARTIntEnable
+                0x000043c6        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000043c6                UARTIntEnable
+ .text.UARTIntDisable
+                0x000043ce        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000043ce                UARTIntDisable
+ .text.UARTIntStatus
+                0x000043d8        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000043d8                UARTIntStatus
+ .text.UARTIntClear
+                0x000043e2        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000043e2                UARTIntClear
+ .text.UARTDMAEnable
+                0x000043e6        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000043e6                UARTDMAEnable
+ .text.UARTDMADisable
+                0x000043ee        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000043ee                UARTDMADisable
+ .text.UARTRxErrorGet
+                0x000043f8        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x000043f8                UARTRxErrorGet
+ .text.UARTRxErrorClear
+                0x00004400        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004400                UARTRxErrorClear
+ .text.UARTClockSourceSet
+                0x00004406        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004406                UARTClockSourceSet
+ .text.UARTClockSourceGet
+                0x0000440c        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x0000440c                UARTClockSourceGet
+ .text.UART9BitEnable
+                0x00004412        0xe C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004412                UART9BitEnable
+ .text.UART9BitDisable
+                0x00004420        0xe C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004420                UART9BitDisable
+ .text.UART9BitAddrSet
+                0x0000442e        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x0000442e                UART9BitAddrSet
+ .text.UART9BitAddrSend
+                0x00004438       0x2c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004438                UART9BitAddrSend
+ .text.UARTLoopbackEnable
+                0x00004464        0xa C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+                0x00004464                UARTLoopbackEnable
+ .text.CPUcpsid
+                0x0000446e        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+                0x0000446e                CPUcpsid
+ .text.CPUprimask
+                0x00004476        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+                0x00004476                CPUprimask
+ .text.CPUcpsie
+                0x0000447c        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+                0x0000447c                CPUcpsie
+ .text.CPUwfi   0x00004484        0x4 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+                0x00004484                CPUwfi
+ .text.CPUbasepriSet
+                0x00004488        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+                0x00004488                CPUbasepriSet
+ .text.CPUbasepriGet
+                0x0000448e        0x6 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+                0x0000448e                CPUbasepriGet
+ .text._sbrk    0x00004494       0x1c c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(sbrk.o)
+                0x00004494                _sbrk
+ .text._exit    0x000044b0        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(_exit.o)
+                0x000044b0                _exit
+                0x000044b4                . = ALIGN (0x4)
+ *(.ctors)
+                0x000044b4                . = ALIGN (0x4)
+ *(.dtors)
+                0x000044b4                . = ALIGN (0x4)
+                0x000044b4                __init_array_start = .
+ *(.init_array*)
+ .init_array    0x000044b4        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+ .init_array.00000
+                0x000044b8        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o)
+                0x000044bc                __init_array_end = .
+ *(.init)
+ .init          0x000044bc        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crti.o
+                0x000044bc                _init
+ .init          0x000044c0        0x8 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtn.o
+ *(.fini*)
+ .fini          0x000044c8        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crti.o
+                0x000044c8                _fini
+ .fini_array    0x000044cc        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+ .fini          0x000044d0        0x8 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtn.o
+                0x000044d8                PROVIDE (__etext, .)
+                0x000044d8                PROVIDE (_etext, .)
+                0x000044d8                PROVIDE (etext, .)
+
+.glue_7         0x000044d8        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x000044d8        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x000044d8        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x000044d8        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x000044d8        0x0
+ .iplt          0x00000000        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+
+.rodata         0x000044d8      0x650
+ *(.rodata)
+ .rodata        0x000044d8       0x3c ./main.o
+ *(.rodata*)
+ .rodata.duty   0x00004514        0x4 ./three_axes.o
+                0x00004514                duty
+ .rodata.full_Period
+                0x00004518        0x4 ./three_axes.o
+                0x00004518                full_Period
+ .rodata.period
+                0x0000451c        0x4 ./rtos/pulse_train.o
+                0x0000451c                period
+ .rodata.str1.4
+                0x00004520        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-impure.o)
+                                  0x2 (size before relaxing)
+ .rodata._global_impure_ptr
+                0x00004524        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-impure.o)
+                0x00004524                _global_impure_ptr
+ .rodata.g_ppui32GPIOIntMapSnowflake
+                0x00004528       0xc0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+ .rodata.g_pui32GPIOBaseAddrs
+                0x000045e8       0x90 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+ .rodata.g_ppui32GPIOIntMapBlizzard
+                0x00004678       0xc0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+ .rodata.g_pui32Priority
+                0x00004738       0x20 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .rodata.g_pui32Dii16Regs
+                0x00004758       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .rodata.g_pui32PendRegs
+                0x0000476c       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .rodata.g_pui32Regs
+                0x00004780       0x9c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .rodata.g_pui32EnRegs
+                0x0000481c       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .rodata.g_pui32UnpendRegs
+                0x00004830       0x14 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .rodata.g_pppui32XTALtoVCO
+                0x00004844      0x120 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+ .rodata.g_pui32VCOFrequencies
+                0x00004964        0x8 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+ .rodata.g_sXTALtoMEMTIM
+                0x0000496c       0x30 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+ .rodata.g_pui32Xtals
+                0x0000499c       0x6c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+ .rodata.g_ppui32TimerIntMapSnowflake
+                0x00004a08       0x40 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+ .rodata.g_ppui32TimerIntMap
+                0x00004a48       0x60 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+ .rodata.g_ppui32UARTIntMap
+                0x00004aa8       0x40 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+ .rodata.g_ppui32UARTIntMapSnowflake
+                0x00004ae8       0x40 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+
+.eh_frame       0x00004b28        0x4
+ .eh_frame      0x00004b28        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+ .eh_frame      0x00004b28        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtend.o
+
+.data           0x20000000      0x884 load address 0x00004b2c
+                0x00004b2c                __data_load__ = LOADADDR (.data)
+                0x20000000                __data_start__ = .
+ *(.data)
+ .data          0x20000000        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crti.o
+ .data          0x20000000        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+                0x20000000                __dso_handle
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp/crt0.o
+ .data          0x20000004        0x0 ./bluetooth.o
+ .data          0x20000004        0x0 ./main.o
+ .data          0x20000004        0x0 ./motion_control.o
+ .data          0x20000004        0x0 ./system_TM4C123.o
+ .data          0x20000004        0x0 ./three_axes.o
+ .data          0x20000004        0x0 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .data          0x20000004        0x0 ./x_axis.o
+ .data          0x20000004        0x0 ./y_axis.o
+ .data          0x20000004        0x0 ./z_axis.o
+ .data          0x20000004        0x0 ./rtos/keys_driver.o
+ .data          0x20000004        0x0 ./rtos/pulse_train.o
+ .data          0x20000004        0x0 ./rtos/rtos.o
+ .data          0x20000004        0x0 ./rtos/rtos_pipe.o
+ .data          0x20000004        0x0 ./rtos/rtos_sched.o
+ .data          0x20000004        0x0 ./rtos/rtos_task.o
+ .data          0x20000004        0x0 ./rtos/uart_driver.o
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-exit.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-impure.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-init.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-malloc.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-memset.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mlock.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-sbrkr.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-atexit.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-fini.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-freer.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-reent.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__atexit.o)
+ .data          0x20000004        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+ .data          0x20000004        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .data          0x20000004        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+ .data          0x20000004        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+ .data          0x20000004        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+ .data          0x20000004        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+ .data          0x20000004        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(sbrk.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(_exit.o)
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtend.o
+ .data          0x20000004        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtn.o
+ *(.data*)
+ .data.SystemCoreClock
+                0x20000004        0x4 ./system_TM4C123.o
+                0x20000004                SystemCoreClock
+ .data.x_pulse_Gen_info
+                0x20000008       0x14 ./x_axis.o
+                0x20000008                x_pulse_Gen_info
+ .data.y_pulse_Gen_info
+                0x2000001c       0x14 ./y_axis.o
+                0x2000001c                y_pulse_Gen_info
+ .data.z_pulse_Gen_info
+                0x20000030       0x14 ./z_axis.o
+                0x20000030                z_pulse_Gen_info
+ *fill*         0x20000044        0x4 
+ .data.impure_data
+                0x20000048      0x428 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x20000470        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-impure.o)
+                0x20000470                _impure_ptr
+ .data.__malloc_av_
+                0x20000474      0x408 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+                0x20000474                __malloc_av_
+ .data.__malloc_trim_threshold
+                0x2000087c        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+                0x2000087c                __malloc_trim_threshold
+ .data.__malloc_sbrk_base
+                0x20000880        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+                0x20000880                __malloc_sbrk_base
+                0x20000884                . = ALIGN (0x4)
+                0x20000884                __data_end__ = .
+
+.jcr            0x20000884        0x4 load address 0x000053b0
+ .jcr           0x20000884        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+ .jcr           0x20000884        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtend.o
+
+.igot.plt       0x20000888        0x0 load address 0x000053b4
+ .igot.plt      0x00000000        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+
+vtable          0x20000c00      0x400 load address 0x000053b4
+                0x20000c00                PROVIDE (__start_vtable, .)
+ vtable         0x20000c00      0x400 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+                0x20001000                PROVIDE (__stop_vtable, .)
+
+.ARM.exidx      0x000057b4        0x8
+                0x000057b4                __exidx_start = .
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+ .ARM.exidx     0x000057b4        0x8 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp/crt0.o
+                0x000057bc                __exidx_end = .
+
+.ARM.extab      0x000057bc        0x0
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ .ARM.extab     0x000057bc        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp/crt0.o
+
+.rel.dyn        0x000057bc        0x0
+ .rel.iplt      0x00000000        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+
+.bss            0x20001000      0x2c0
+                0x20001000                __bss_start__ = .
+ *(.shbss)
+ *(.bss)
+ .bss           0x20001000        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crti.o
+ .bss           0x20001000       0x1c c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp/crt0.o
+ .bss           0x2000101c        0x0 ./bluetooth.o
+ .bss           0x2000101c        0x0 ./main.o
+ .bss           0x2000101c        0x0 ./motion_control.o
+ .bss           0x2000101c        0x0 ./system_TM4C123.o
+ .bss           0x2000101c        0x0 ./three_axes.o
+ .bss           0x2000101c        0x0 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .bss           0x2000101c        0x0 ./x_axis.o
+ .bss           0x2000101c        0x0 ./y_axis.o
+ .bss           0x2000101c        0x0 ./z_axis.o
+ .bss           0x2000101c        0x0 ./rtos/keys_driver.o
+ .bss           0x2000101c        0x0 ./rtos/pulse_train.o
+ .bss           0x2000101c        0x0 ./rtos/rtos.o
+ .bss           0x2000101c        0x0 ./rtos/rtos_pipe.o
+ .bss           0x2000101c        0x0 ./rtos/rtos_sched.o
+ .bss           0x2000101c        0x0 ./rtos/rtos_task.o
+ .bss           0x2000101c        0x0 ./rtos/uart_driver.o
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-exit.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-impure.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-init.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-malloc.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-memset.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mlock.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-sbrkr.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-atexit.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-fini.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-freer.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-reent.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__atexit.o)
+ .bss           0x2000101c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+ .bss           0x2000101c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .bss           0x2000101c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+ .bss           0x2000101c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+ .bss           0x2000101c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+ .bss           0x2000101c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+ .bss           0x2000101c        0x0 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(sbrk.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(_exit.o)
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtend.o
+ .bss           0x2000101c        0x0 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtn.o
+ *(.bss.*)
+ .bss.Home      0x2000101c        0x8 ./main.o
+                0x2000101c                Home
+ .bss.pui32Stack
+                0x20001024      0x200 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .bss.keys_last_state
+                0x20001224        0x4 ./rtos/keys_driver.o
+                0x20001224                keys_last_state
+ .bss.list.4445
+                0x20001228        0x4 ./rtos/rtos_sched.o
+ .bss.__malloc_max_total_mem
+                0x2000122c        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+                0x2000122c                __malloc_max_total_mem
+ .bss.__malloc_max_sbrked_mem
+                0x20001230        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+                0x20001230                __malloc_max_sbrked_mem
+ .bss.__malloc_top_pad
+                0x20001234        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+                0x20001234                __malloc_top_pad
+ .bss.__malloc_current_mallinfo
+                0x20001238       0x28 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+                0x20001238                __malloc_current_mallinfo
+ .bss.heap_end.4079
+                0x20001260        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(sbrk.o)
+ *(COMMON)
+ COMMON         0x20001264        0x8 ./bluetooth.o
+                0x20001264                bt_rx_Fifo
+                0x20001268                bt_tx_Fifo
+ COMMON         0x2000126c       0x20 ./motion_control.o
+                0x2000126c                y_scale
+                0x20001270                x_scale
+                0x20001274                Axis_y
+                0x20001280                Axis_x
+ COMMON         0x2000128c        0xc ./three_axes.o
+                0x2000128c                z_axis
+                0x20001290                x_axis
+                0x20001294                y_axis
+ COMMON         0x20001298        0x4 ./rtos/keys_driver.o
+                0x20001298                keys_Fifo
+ COMMON         0x2000129c        0x5 ./rtos/pulse_train.o
+                0x2000129c                pulse_Fifo
+                0x200012a0                latch
+ *fill*         0x200012a1        0x3 
+ COMMON         0x200012a4        0x8 ./rtos/rtos.o
+                0x200012a4                rtos_recursive_counter
+                0x200012a8                slice_quantum
+ COMMON         0x200012ac        0x8 ./rtos/rtos_task.o
+                0x200012ac                rtos_running_task
+                0x200012b0                rtos_ready_tasks
+ COMMON         0x200012b4        0x8 ./rtos/uart_driver.o
+                0x200012b4                uart_rx_Fifo
+                0x200012b8                uart_tx_Fifo
+ COMMON         0x200012bc        0x4 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-reent.o)
+                0x200012bc                errno
+                0x200012c0                . = ALIGN (0x4)
+                0x200012c0                __bss_end__ = .
+
+.heap           0x200012c0        0x0
+                0x200012c0                __heap_start__ = .
+                0x200012c0                end = __heap_start__
+                0x200012c0                _end = end
+                0x200012c0                __end = end
+ *(.heap)
+                0x200012c0                __heap_end__ = .
+                0x200012c0                __HeapLimit = __heap_end__
+
+.stack          0x200012c0        0x0
+                0x200012c0                _stack = .
+                0x200012c0                __stack = .
+ *(.stack)
+START GROUP
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a
+LOAD C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp\libgcc.a
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a
+END GROUP
+START GROUP
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp\libgcc.a
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libg.a
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a
+END GROUP
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtend.o
+LOAD c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtn.o
+OUTPUT(three_axes.out elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x30
+ .ARM.attributes
+                0x00000000       0x22 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crti.o
+ .ARM.attributes
+                0x00000022       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtbegin.o
+ .ARM.attributes
+                0x00000054       0x20 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp/crt0.o
+ .ARM.attributes
+                0x00000074       0x37 ./bluetooth.o
+ .ARM.attributes
+                0x000000ab       0x37 ./main.o
+ .ARM.attributes
+                0x000000e2       0x37 ./motion_control.o
+ .ARM.attributes
+                0x00000119       0x37 ./system_TM4C123.o
+ .ARM.attributes
+                0x00000150       0x37 ./three_axes.o
+ .ARM.attributes
+                0x00000187       0x37 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .ARM.attributes
+                0x000001be       0x37 ./x_axis.o
+ .ARM.attributes
+                0x000001f5       0x37 ./y_axis.o
+ .ARM.attributes
+                0x0000022c       0x37 ./z_axis.o
+ .ARM.attributes
+                0x00000263       0x37 ./rtos/keys_driver.o
+ .ARM.attributes
+                0x0000029a       0x37 ./rtos/pulse_train.o
+ .ARM.attributes
+                0x000002d1       0x37 ./rtos/rtos.o
+ .ARM.attributes
+                0x00000308       0x37 ./rtos/rtos_pipe.o
+ .ARM.attributes
+                0x0000033f       0x37 ./rtos/rtos_sched.o
+ .ARM.attributes
+                0x00000376       0x37 ./rtos/rtos_task.o
+ .ARM.attributes
+                0x000003ad       0x37 ./rtos/uart_driver.o
+ .ARM.attributes
+                0x000003e4       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000416       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000448       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000047a       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-malloc.o)
+ .ARM.attributes
+                0x000004ac       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+ .ARM.attributes
+                0x000004de       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000510       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mlock.o)
+ .ARM.attributes
+                0x00000542       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-sbrkr.o)
+ .ARM.attributes
+                0x00000574       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o)
+ .ARM.attributes
+                0x000005a6       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-atexit.o)
+ .ARM.attributes
+                0x000005d8       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-fini.o)
+ .ARM.attributes
+                0x0000060a       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-freer.o)
+ .ARM.attributes
+                0x0000063c       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-reent.o)
+ .ARM.attributes
+                0x0000066e       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x000006a0       0x37 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+ .ARM.attributes
+                0x000006d7       0x37 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .ARM.attributes
+                0x0000070e       0x37 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+ .ARM.attributes
+                0x00000745       0x37 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+ .ARM.attributes
+                0x0000077c       0x37 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+ .ARM.attributes
+                0x000007b3       0x37 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+ .ARM.attributes
+                0x000007ea       0x37 C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+ .ARM.attributes
+                0x00000821       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(sbrk.o)
+ .ARM.attributes
+                0x00000853       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(_exit.o)
+ .ARM.attributes
+                0x00000885       0x32 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtend.o
+ .ARM.attributes
+                0x000008b7       0x22 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/softfp/crtn.o
+
+.comment        0x00000000       0x9b
+ .comment       0x00000000       0x70 ./bluetooth.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 ./main.o
+ .comment       0x00000000       0x71 ./motion_control.o
+ .comment       0x00000000       0x71 ./system_TM4C123.o
+ .comment       0x00000000       0x71 ./three_axes.o
+ .comment       0x00000000       0x71 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .comment       0x00000000       0x71 ./x_axis.o
+ .comment       0x00000000       0x71 ./y_axis.o
+ .comment       0x00000000       0x71 ./z_axis.o
+ .comment       0x00000000       0x71 ./rtos/keys_driver.o
+ .comment       0x00000000       0x71 ./rtos/pulse_train.o
+ .comment       0x00000000       0x71 ./rtos/rtos.o
+ .comment       0x00000000       0x71 ./rtos/rtos_pipe.o
+ .comment       0x00000000       0x71 ./rtos/rtos_sched.o
+ .comment       0x00000000       0x71 ./rtos/rtos_task.o
+ .comment       0x00000000       0x71 ./rtos/uart_driver.o
+ .comment       0x00000070       0x2b C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(gpio.o)
+                                 0x2c (size before relaxing)
+ .comment       0x00000000       0x2c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(interrupt.o)
+ .comment       0x00000000       0x2c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(pwm.o)
+ .comment       0x00000000       0x2c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(sysctl.o)
+ .comment       0x00000000       0x2c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(timer.o)
+ .comment       0x00000000       0x2c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(uart.o)
+ .comment       0x00000000       0x2c C:/ti/TivaWare_C_Series-2.1.2.111/driverlib/gcc\libdriver.a(cpu.o)
+
+.debug_info     0x00000000     0x3847
+ .debug_info    0x00000000      0x15e ./bluetooth.o
+ .debug_info    0x0000015e      0x1e6 ./main.o
+ .debug_info    0x00000344      0x2a3 ./motion_control.o
+ .debug_info    0x000005e7      0xeb9 ./system_TM4C123.o
+ .debug_info    0x000014a0      0x349 ./three_axes.o
+ .debug_info    0x000017e9      0x175 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_info    0x0000195e      0x23c ./x_axis.o
+ .debug_info    0x00001b9a      0x249 ./y_axis.o
+ .debug_info    0x00001de3      0x1e7 ./z_axis.o
+ .debug_info    0x00001fca      0xd42 ./rtos/keys_driver.o
+ .debug_info    0x00002d0c      0x1e3 ./rtos/pulse_train.o
+ .debug_info    0x00002eef      0x1d2 ./rtos/rtos.o
+ .debug_info    0x000030c1      0x1d6 ./rtos/rtos_pipe.o
+ .debug_info    0x00003297      0x238 ./rtos/rtos_sched.o
+ .debug_info    0x000034cf      0x21a ./rtos/rtos_task.o
+ .debug_info    0x000036e9      0x15e ./rtos/uart_driver.o
+
+.debug_abbrev   0x00000000      0xedc
+ .debug_abbrev  0x00000000       0xd1 ./bluetooth.o
+ .debug_abbrev  0x000000d1      0x126 ./main.o
+ .debug_abbrev  0x000001f7       0xe6 ./motion_control.o
+ .debug_abbrev  0x000002dd      0x137 ./system_TM4C123.o
+ .debug_abbrev  0x00000414      0x101 ./three_axes.o
+ .debug_abbrev  0x00000515       0xca ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_abbrev  0x000005df       0xe9 ./x_axis.o
+ .debug_abbrev  0x000006c8       0xe9 ./y_axis.o
+ .debug_abbrev  0x000007b1       0xbc ./z_axis.o
+ .debug_abbrev  0x0000086d      0x140 ./rtos/keys_driver.o
+ .debug_abbrev  0x000009ad       0xeb ./rtos/pulse_train.o
+ .debug_abbrev  0x00000a98       0xf5 ./rtos/rtos.o
+ .debug_abbrev  0x00000b8d       0xbb ./rtos/rtos_pipe.o
+ .debug_abbrev  0x00000c48       0xee ./rtos/rtos_sched.o
+ .debug_abbrev  0x00000d36       0xd5 ./rtos/rtos_task.o
+ .debug_abbrev  0x00000e0b       0xd1 ./rtos/uart_driver.o
+
+.debug_aranges  0x00000000      0x318
+ .debug_aranges
+                0x00000000       0x28 ./bluetooth.o
+ .debug_aranges
+                0x00000028       0x30 ./main.o
+ .debug_aranges
+                0x00000058       0x28 ./motion_control.o
+ .debug_aranges
+                0x00000080       0x30 ./system_TM4C123.o
+ .debug_aranges
+                0x000000b0       0x48 ./three_axes.o
+ .debug_aranges
+                0x000000f8       0x38 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_aranges
+                0x00000130       0x30 ./x_axis.o
+ .debug_aranges
+                0x00000160       0x30 ./y_axis.o
+ .debug_aranges
+                0x00000190       0x30 ./z_axis.o
+ .debug_aranges
+                0x000001c0       0x28 ./rtos/keys_driver.o
+ .debug_aranges
+                0x000001e8       0x28 ./rtos/pulse_train.o
+ .debug_aranges
+                0x00000210       0x38 ./rtos/rtos.o
+ .debug_aranges
+                0x00000248       0x38 ./rtos/rtos_pipe.o
+ .debug_aranges
+                0x00000280       0x38 ./rtos/rtos_sched.o
+ .debug_aranges
+                0x000002b8       0x38 ./rtos/rtos_task.o
+ .debug_aranges
+                0x000002f0       0x28 ./rtos/uart_driver.o
+
+.debug_ranges   0x00000000      0x218
+ .debug_ranges  0x00000000       0x18 ./bluetooth.o
+ .debug_ranges  0x00000018       0x20 ./main.o
+ .debug_ranges  0x00000038       0x18 ./motion_control.o
+ .debug_ranges  0x00000050       0x20 ./system_TM4C123.o
+ .debug_ranges  0x00000070       0x38 ./three_axes.o
+ .debug_ranges  0x000000a8       0x28 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_ranges  0x000000d0       0x20 ./x_axis.o
+ .debug_ranges  0x000000f0       0x20 ./y_axis.o
+ .debug_ranges  0x00000110       0x20 ./z_axis.o
+ .debug_ranges  0x00000130       0x18 ./rtos/keys_driver.o
+ .debug_ranges  0x00000148       0x18 ./rtos/pulse_train.o
+ .debug_ranges  0x00000160       0x28 ./rtos/rtos.o
+ .debug_ranges  0x00000188       0x28 ./rtos/rtos_pipe.o
+ .debug_ranges  0x000001b0       0x28 ./rtos/rtos_sched.o
+ .debug_ranges  0x000001d8       0x28 ./rtos/rtos_task.o
+ .debug_ranges  0x00000200       0x18 ./rtos/uart_driver.o
+
+.debug_line     0x00000000     0x1613
+ .debug_line    0x00000000      0x160 ./bluetooth.o
+ .debug_line    0x00000160      0x1bc ./main.o
+ .debug_line    0x0000031c      0x16a ./motion_control.o
+ .debug_line    0x00000486      0x1ed ./system_TM4C123.o
+ .debug_line    0x00000673      0x219 ./three_axes.o
+ .debug_line    0x0000088c      0x158 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_line    0x000009e4      0x17c ./x_axis.o
+ .debug_line    0x00000b60      0x176 ./y_axis.o
+ .debug_line    0x00000cd6      0x15c ./z_axis.o
+ .debug_line    0x00000e32      0x191 ./rtos/keys_driver.o
+ .debug_line    0x00000fc3      0x193 ./rtos/pulse_train.o
+ .debug_line    0x00001156      0x181 ./rtos/rtos.o
+ .debug_line    0x000012d7       0x9d ./rtos/rtos_pipe.o
+ .debug_line    0x00001374       0xad ./rtos/rtos_sched.o
+ .debug_line    0x00001421       0x95 ./rtos/rtos_task.o
+ .debug_line    0x000014b6      0x15d ./rtos/uart_driver.o
+
+.debug_str      0x00000000      0xe8e
+ .debug_str     0x00000000      0x1e4 ./bluetooth.o
+                                0x22a (size before relaxing)
+ .debug_str     0x000001e4       0x69 ./main.o
+                                0x24a (size before relaxing)
+ .debug_str     0x0000024d       0xff ./motion_control.o
+                                0x2cc (size before relaxing)
+ .debug_str     0x0000034c      0x673 ./system_TM4C123.o
+                                0x848 (size before relaxing)
+ .debug_str     0x000009bf       0xa9 ./three_axes.o
+                                0x2f5 (size before relaxing)
+ .debug_str     0x00000a68       0xa1 ./tm4c123gh6pm_startup_ccs_gcc.o
+                                0x246 (size before relaxing)
+ .debug_str     0x00000b09       0x3f ./x_axis.o
+                                0x2a0 (size before relaxing)
+ .debug_str     0x00000b48       0x30 ./y_axis.o
+                                0x2a7 (size before relaxing)
+ .debug_str     0x00000b78       0x30 ./z_axis.o
+                                0x26d (size before relaxing)
+ .debug_str     0x00000ba8       0x4e ./rtos/keys_driver.o
+                                0x7f8 (size before relaxing)
+ .debug_str     0x00000bf6       0x68 ./rtos/pulse_train.o
+                                0x268 (size before relaxing)
+ .debug_str     0x00000c5e       0xcd ./rtos/rtos.o
+                                0x2a1 (size before relaxing)
+ .debug_str     0x00000d2b       0x5f ./rtos/rtos_pipe.o
+                                0x21a (size before relaxing)
+ .debug_str     0x00000d8a       0x74 ./rtos/rtos_sched.o
+                                0x283 (size before relaxing)
+ .debug_str     0x00000dfe       0x5d ./rtos/rtos_task.o
+                                0x279 (size before relaxing)
+ .debug_str     0x00000e5b       0x33 ./rtos/uart_driver.o
+                                0x232 (size before relaxing)
+
+.debug_frame    0x00000000      0xafc
+ .debug_frame   0x00000000       0x50 ./bluetooth.o
+ .debug_frame   0x00000050       0x70 ./main.o
+ .debug_frame   0x000000c0       0x54 ./motion_control.o
+ .debug_frame   0x00000114       0x84 ./system_TM4C123.o
+ .debug_frame   0x00000198       0xe4 ./three_axes.o
+ .debug_frame   0x0000027c       0x7c ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_frame   0x000002f8       0x6c ./x_axis.o
+ .debug_frame   0x00000364       0x70 ./y_axis.o
+ .debug_frame   0x000003d4       0x70 ./z_axis.o
+ .debug_frame   0x00000444       0x50 ./rtos/keys_driver.o
+ .debug_frame   0x00000494       0x58 ./rtos/pulse_train.o
+ .debug_frame   0x000004ec       0x88 ./rtos/rtos.o
+ .debug_frame   0x00000574       0xa8 ./rtos/rtos_pipe.o
+ .debug_frame   0x0000061c       0x98 ./rtos/rtos_sched.o
+ .debug_frame   0x000006b4       0xa8 ./rtos/rtos_task.o
+ .debug_frame   0x0000075c       0x50 ./rtos/uart_driver.o
+ .debug_frame   0x000007ac       0x28 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-exit.o)
+ .debug_frame   0x000007d4       0x2c c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-init.o)
+ .debug_frame   0x00000800       0x30 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-malloc.o)
+ .debug_frame   0x00000830       0x58 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mallocr.o)
+ .debug_frame   0x00000888       0x34 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-memset.o)
+ .debug_frame   0x000008bc       0x30 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-mlock.o)
+ .debug_frame   0x000008ec       0x2c c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-sbrkr.o)
+ .debug_frame   0x00000918       0x50 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00000968       0x20 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-atexit.o)
+ .debug_frame   0x00000988       0x34 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-fini.o)
+ .debug_frame   0x000009bc       0x74 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-freer.o)
+ .debug_frame   0x00000a30       0x58 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-reent.o)
+ .debug_frame   0x00000a88       0x34 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-__atexit.o)
+ .debug_frame   0x00000abc       0x20 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(sbrk.o)
+ .debug_frame   0x00000adc       0x20 c:/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(_exit.o)
