@@ -163,7 +163,7 @@ void drop_lift(float l1, float l2){
 			z_axis->dir = 'd';
 			dz = -dz;
 		}
-		else x_axis->dir = 'u';
+		else z_axis->dir = 'u';
 
 		rtos_task_create(drop_lift, 0, 1);
 	}
