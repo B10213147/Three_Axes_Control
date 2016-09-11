@@ -20,7 +20,7 @@ struct axis *x_axis;
 struct axis *y_axis;
 struct axis *z_axis;
 const float duty = 0.5;
-const uint32_t full_Period = 16000/2 * 3; //unit = ticks/3ms
+const uint32_t full_Period = 16000/2*5; //unit = ticks/5ms
 
 void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses){
 	if(pulse_Gen->finished == true){
@@ -39,11 +39,11 @@ void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses){
 
 	if(pulse_Gen->next == 0){
 		// Acceleration & Deceleration
-		if(pulse_Gen->total >= 24*25){
-			movement(pulse_Gen, 25);
+		if(pulse_Gen->total >= 9*10){
+			movement(pulse_Gen, 10);
 		}
 		else{	// total < 600
-			movement(pulse_Gen, 10);
+			movement(pulse_Gen, 2);
 		}
 		// Position modify
 		if(pulse_Gen->current <= 1 && pulse_Gen->remain < 0){
