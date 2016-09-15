@@ -11,11 +11,7 @@
 #include "driverlib/timer.h"
 #include "driverlib/gpio.h"
 #include "driverlib/pin_map.h"
-#include "driverlib/interrupt.h"
 #include "driverlib/pwm.h"
-#include "inc/hw_ints.h"
-
-void x_timer_End(void);
 
 struct pulse_Gen_info x_pulse_Gen_info =
 	{0, 0, 0, 0, false, true};
@@ -45,19 +41,16 @@ void x_axis_Init(void){
 	//
 	// Configure the timer captures.
 	//
-	TimerConfigure(TIMER3_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT | TIMER_CFG_B_CAP_COUNT);
-	TimerIntRegister(TIMER3_BASE, TIMER_B, x_timer_End);
-	IntPrioritySet(INT_TIMER3B, 0x20);	//set Timer3B to 1 priority
-	TimerMatchSet(TIMER3_BASE, TIMER_B, 0);
-	TimerIntEnable(TIMER3_BASE, TIMER_CAPB_MATCH);
+	TimerConfigure(TIMER3_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT_UP | TIMER_CFG_B_CAP_COUNT_UP);
 }
 
 void x_pwm_Start(void){
-	uint32_t period = full_Period / x_pulse_Gen_info.current;	//unit = ticks/cycle
+//	uint32_t period = full_Period / x_pulse_Gen_info.current;	//unit = ticks/cycle
+	uint32_t period = full_Period;
 	uint32_t width_H = period * duty;
 
-	TimerLoadSet(TIMER3_BASE, TIMER_B, x_pulse_Gen_info.current);
-
+//	TimerLoadSet(TIMER3_BASE, TIMER_B, x_pulse_Gen_info.current);
+	TIMER3->TBV = 0;
 	TimerEnable(TIMER3_BASE, TIMER_B);
 
 	PWMGenPeriodSet(PWM0_BASE, PWM_GEN_1, period);
@@ -66,18 +59,19 @@ void x_pwm_Start(void){
 	PWMGenEnable(PWM0_BASE, PWM_GEN_1);
 	// Turn on the Output pins
 	PWMOutputState(PWM0_BASE, PWM_OUT_3_BIT, true);
+
+	x_pulse_Gen_info.working = true;
 }
 
-void x_timer_End(void){
-	disable_os();
-	if(TimerIntStatus(TIMER3_BASE, true) & TIMER_CAPB_MATCH){
-		// Disable the PWM generator
-		PWMGenDisable(PWM0_BASE, PWM_GEN_1);
-		// Turn off the Output pins
-		PWMOutputState(PWM0_BASE, PWM_OUT_3_BIT, false);
-		TimerIntClear(TIMER3_BASE, TIMER_CAPB_MATCH);
-		x_pulse_Gen_info.working = false;
-	}
-	enable_os();
+uint32_t x_pwm_Stop(void){
+	// Turn off the Output pins
+	PWMOutputState(PWM0_BASE, PWM_OUT_3_BIT, false);
+	// Disable the PWM generator
+	PWMGenDisable(PWM0_BASE, PWM_GEN_1);
+
+	x_pulse_Gen_info.working = false;
+
+	TimerDisable(TIMER3_BASE, TIMER_B);
+	return TimerValueGet(TIMER3_BASE, TIMER_B);
 }
 
