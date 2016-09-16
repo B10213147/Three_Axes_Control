@@ -40,6 +40,7 @@ struct axis{
 
 extern void axes_init(void);
 extern void axis_move(struct pulse_Gen_info *pulse_Gen, bool on_off);
+extern void axis_modify(struct pulse_Gen_info *pulse_Gen);
 
 extern struct axis *x_axis;
 extern struct axis *y_axis;
