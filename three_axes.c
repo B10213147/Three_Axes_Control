@@ -11,8 +11,8 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
 
-void movement(struct pulse_Gen_info *pulse_Gen, int max_speed);
-uint32_t pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable);
+void set_speed(struct pulse_Gen_info *pulse_Gen, int max_speed);
+void pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable);
 void reverse(struct pulse_Gen_info *pulse_Gen);
 void set_dir(struct axis *axis, bool state);
 
@@ -22,12 +22,12 @@ struct axis *z_axis;
 const float duty = 0.5;
 const uint32_t full_Period = 16000/2*5; //unit = ticks/5ms
 
-void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses){
+void axis_move(struct pulse_Gen_info *pulse_Gen, bool on_off){
 	if(pulse_Gen->finished == true){
-		pulse_Gen->total = pulses;
-		if(pulse_Gen->total == 0) return;
-		pulse_Gen->remain = pulses;
-		pulse_Gen->finished = false;
+//		pulse_Gen->total = pulses;
+//		if(pulse_Gen->total == 0) return;
+//		pulse_Gen->remain = pulses;
+//		pulse_Gen->finished = false;
 
 		if(pulse_Gen == &x_pulse_Gen_info)
 			set_dir(x_axis, true);
@@ -37,27 +37,25 @@ void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses){
 			set_dir(z_axis, true);
 	}
 
-	if(pulse_Gen->next == 0){
-		// Acceleration & Deceleration
-		if(pulse_Gen->total >= 9*10){
-			movement(pulse_Gen, 10);
-		}
-		else{	// total < 600
-			movement(pulse_Gen, 2);
-		}
-		// Position modify
-		if(pulse_Gen->current <= 1 && pulse_Gen->remain < 0){
-			reverse(pulse_Gen);
-		}
+	if(on_off != false)
+		set_speed(pulse_Gen, 12);
+	else
+		set_speed(pulse_Gen, 0);
+
+	if(pulse_Gen->speed != 0){
+		pulse_Generator(pulse_Gen, true);
+		pulse_Gen->finished = false;
 	}
-
-	pulse_Generator(pulse_Gen, true);
-
-	if(pulse_Gen->remain != 0) pulse_Gen->finished = false;
 	else{
+		pulse_Generator(pulse_Gen, false);
 		pulse_Gen->finished = true;
-		pulse_Gen->current = 0;
 	}
+
+//	if(pulse_Gen->remain != 0) pulse_Gen->finished = false;
+//	else{
+//		pulse_Gen->finished = true;
+//		pulse_Gen->current = 0;
+//	}
 }
 
 void axes_init(void){
@@ -77,28 +75,59 @@ void axes_init(void){
 //	z_axis_Init();
 }
 
-void movement(struct pulse_Gen_info *pulse_Gen, int max_speed){
-	int sum = 0;
-	for(int i=1; i<max_speed; sum+=i, i++);
-
-	if(pulse_Gen->remain > sum){
-		if(pulse_Gen->current < max_speed){
-			// Accelerate
-			pulse_Gen->next = 1 + pulse_Gen->current;
-		}
-		else{
-			// Constant speed
-			pulse_Gen->next = max_speed;
-		}
+void set_speed(struct pulse_Gen_info *pulse_Gen, int max_speed){
+	if(pulse_Gen->speed < max_speed){
+		// Accelerate
+		pulse_Gen->speed++;
 	}
-	else if(pulse_Gen->current > 0 && pulse_Gen->remain <= sum){
+	else if(pulse_Gen->speed > max_speed){
 		// Decelerate
-		pulse_Gen->next = pulse_Gen->current - 1;
+		pulse_Gen->speed--;
 	}
+	else{
+		// Constant speed
+		pulse_Gen->speed = max_speed;
+	}
+
+	if(pulse_Gen == &x_pulse_Gen_info)
+		x_pwm_Speed_Set(pulse_Gen->speed);
+//	else if(pulse_Gen == &y_pulse_Gen_info)
+//		y_pwm_Speed_Set(pulse_Gen->speed);
+//	else if(pulse_Gen == &z_pulse_Gen_info)
+//		z_pwm_Speed_Set(pulse_Gen->speed);
+
+//	int sum = 0;
+//	for(int i=1; i<max_speed; sum+=i, i++);
+//
+//	if(pulse_Gen->remain > sum){
+//		if(pulse_Gen->current < max_speed){
+//			// Accelerate
+//			pulse_Gen->speed = 1 + pulse_Gen->current;
+//		}
+//		else{
+//			// Constant speed
+//			pulse_Gen->speed = max_speed;
+//		}
+//	}
+//	else if(pulse_Gen->current > 0 && pulse_Gen->remain <= sum){
+//		// Decelerate
+//		pulse_Gen->speed = pulse_Gen->current - 1;
+//	}
 }
 
-uint32_t pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable){
-	uint32_t counter_value = 0;
+void pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable){
+	if(bEnable == false){
+		disable_os();
+
+		if(pulse_Gen == &x_pulse_Gen_info)
+			x_pwm_Stop();
+//		else if(pulse_Gen == &y_pulse_Gen_info)
+//			y_pwm_Stop();
+//		else if(pulse_Gen == &z_pulse_Gen_info)
+//			z_pwm_Stop();
+
+		enable_os();
+	}
 
 	if((pulse_Gen->working == false) && (bEnable == true)){
 		disable_os();
@@ -112,20 +141,6 @@ uint32_t pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable){
 
 		enable_os();
 	}
-
-	if(bEnable == false){
-		disable_os();
-
-		if(pulse_Gen == &x_pulse_Gen_info)
-			counter_value = x_pwm_Stop();
-//		else if(pulse_Gen == &y_pulse_Gen_info)
-//			counter_value = y_pwm_Stop();
-//		else if(pulse_Gen == &z_pulse_Gen_info)
-//			counter_value = z_pwm_Stop();
-
-		enable_os();
-	}
-	return counter_value;
 }
 
 void reverse(struct pulse_Gen_info *pulse_Gen){
@@ -136,7 +151,7 @@ void reverse(struct pulse_Gen_info *pulse_Gen){
 	else if(pulse_Gen == &z_pulse_Gen_info)
 		set_dir(z_axis, false);
 
-	pulse_Gen->next = 1;
+	pulse_Gen->speed = 1;
 	pulse_Gen->remain += 1*2;
 }
 

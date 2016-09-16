@@ -23,7 +23,7 @@ struct pulse_Gen_info{
 	int total;
 	int remain;
 	int current;
-	int next;
+	int speed;
 	bool working;
 	bool finished;
 };
@@ -39,7 +39,7 @@ struct axis{
 };
 
 extern void axes_init(void);
-extern void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses);
+extern void axis_move(struct pulse_Gen_info *pulse_Gen, bool on_off);
 
 extern struct axis *x_axis;
 extern struct axis *y_axis;

@@ -44,17 +44,19 @@ void x_axis_Init(void){
 	TimerConfigure(TIMER3_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT_UP | TIMER_CFG_B_CAP_COUNT_UP);
 }
 
-void x_pwm_Start(void){
-//	uint32_t period = full_Period / x_pulse_Gen_info.current;	//unit = ticks/cycle
-	uint32_t period = full_Period;
+void x_pwm_Speed_Set(int speed){
+	uint32_t period = full_Period / speed;	//unit = ticks/cycle
 	uint32_t width_H = period * duty;
-
-//	TimerLoadSet(TIMER3_BASE, TIMER_B, x_pulse_Gen_info.current);
-	TIMER3->TBV = 0;
-	TimerEnable(TIMER3_BASE, TIMER_B);
 
 	PWMGenPeriodSet(PWM0_BASE, PWM_GEN_1, period);
 	PWMPulseWidthSet(PWM0_BASE, PWM_OUT_3, width_H);
+}
+
+void x_pwm_Start(void){
+	// Reset Timer counter value
+	TIMER3->TBV = 0;
+	// Enable Timer CCP
+	TimerEnable(TIMER3_BASE, TIMER_B);
 	// Enable the PWM generator
 	PWMGenEnable(PWM0_BASE, PWM_GEN_1);
 	// Turn on the Output pins
@@ -63,15 +65,18 @@ void x_pwm_Start(void){
 	x_pulse_Gen_info.working = true;
 }
 
-uint32_t x_pwm_Stop(void){
+void x_pwm_Stop(void){
 	// Turn off the Output pins
 	PWMOutputState(PWM0_BASE, PWM_OUT_3_BIT, false);
 	// Disable the PWM generator
 	PWMGenDisable(PWM0_BASE, PWM_GEN_1);
+	// Disable Timer CCP
+	TimerDisable(TIMER3_BASE, TIMER_B);
 
 	x_pulse_Gen_info.working = false;
+}
 
-	TimerDisable(TIMER3_BASE, TIMER_B);
+uint32_t x_Timer_Value_Get(void){
 	return TimerValueGet(TIMER3_BASE, TIMER_B);
 }
 
