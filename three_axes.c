@@ -18,8 +18,8 @@ void set_dir(struct axis *axis, bool state);
 struct axis *x_axis;
 struct axis *y_axis;
 struct axis *z_axis;
-const float duty = 0.5;
-const uint32_t full_Period = 16000/2*5; //unit = ticks/5ms
+const float duty = 0.05;
+const uint32_t full_Period = 16000/64*200; //unit = ticks/5ms
 
 //!	state == true means speed increase or constant speed
 //!	state == false means speed decrease
@@ -49,7 +49,6 @@ void axis_move(struct pulse_Gen_info *pulse_Gen, bool on_off){
 	else{
 		pulse_Generator(pulse_Gen, false);
 		pulse_Gen->current = axis_timer_feedback(pulse_Gen);
-//		pulse_Gen->finished = true;
 	}
 	pulse_Gen->last_onoff_state = on_off;
 }
@@ -75,22 +74,25 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 		else if(pulse_Gen == &z_pulse_Gen_info)
 			set_dir(z_axis, true);
 
+		pulse_Gen->speed = 1;
+		// Second calculation
 		current_pulses = pulse_Gen->current +
 				axis_timer_feedback(pulse_Gen) - pulse_Gen->changed_value;
 		if(current_pulses == pulse_Gen->total){
 			pulse_Gen->current = current_pulses;
+			pulse_Gen->speed = 0;
 		}
-		pulse_Gen->speed = 1;
 	}
 	else{
 		pulse_Gen->speed = 0;
 	}
-
+	// Constant speed
 	set_speed(pulse_Gen, pulse_Gen->speed);
 
 	if(pulse_Gen->speed != 0){
 		pulse_Generator(pulse_Gen, true);
 		pulse_Gen->finished = false;
+		// First calculation
 		if(pulse_Gen->current > pulse_Gen->total){
 			current_pulses = pulse_Gen->current - axis_timer_feedback(pulse_Gen);
 			if(current_pulses < pulse_Gen->total){
@@ -102,6 +104,7 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 	else{
 		pulse_Generator(pulse_Gen, false);
 		pulse_Gen->finished = true;
+		rtos_running_task->delete_flag = true;
 	}
 }
 
@@ -120,13 +123,14 @@ uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen){
 
 void axes_init(void){
 	//Configure PWM Clock to match system
-	SysCtlPWMClockSet(SYSCTL_PWMDIV_2);
+	SysCtlPWMClockSet(SYSCTL_PWMDIV_64);
 
 	// Enable the peripherals used by this program.
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER2);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER3);
 
@@ -201,6 +205,3 @@ void set_dir(struct axis *axis, bool state){
 		else GPIOPinWrite(GPIOA_BASE, axis->dir_pin, axis->dir_pin);
 	}
 }
-
-
-

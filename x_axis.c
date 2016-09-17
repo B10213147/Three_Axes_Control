@@ -32,8 +32,10 @@ void x_axis_Init(void){
 	GPIOPinConfigure(GPIO_PB5_M0PWM3);
 	GPIOPinTypePWM(GPIOB_BASE, GPIO_PIN_5);
 	//Configure PB3 Pin as Timer Capture
-	GPIOPinConfigure(GPIO_PB3_T3CCP1);
-	GPIOPinTypeTimer(GPIOB_BASE, GPIO_PIN_3);
+//	GPIOPinConfigure(GPIO_PB3_T3CCP1);
+//	GPIOPinTypeTimer(GPIOB_BASE, GPIO_PIN_3);
+	GPIOPinConfigure(GPIO_PF3_T1CCP1);
+	GPIOPinTypeTimer(GPIOF_BASE, GPIO_PIN_3);
 	//Configure PWM Options
 	//PWM_GEN_1 Covers M0PWM2 and M0PWM3 See page 207 4/11/13 DriverLib doc
 	PWMGenConfigure(PWM0_BASE, PWM_GEN_1, PWM_GEN_MODE_UP_DOWN | PWM_GEN_MODE_NO_SYNC);
@@ -41,7 +43,8 @@ void x_axis_Init(void){
 	//
 	// Configure the timer captures.
 	//
-	TimerConfigure(TIMER3_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT_UP | TIMER_CFG_B_CAP_COUNT_UP);
+//	TimerConfigure(TIMER3_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT_UP | TIMER_CFG_B_CAP_COUNT_UP);
+	TimerConfigure(TIMER1_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT_UP | TIMER_CFG_B_CAP_COUNT_UP);
 }
 
 void x_pwm_Speed_Set(int speed){
@@ -54,9 +57,11 @@ void x_pwm_Speed_Set(int speed){
 
 void x_pwm_Start(void){
 	// Reset Timer counter value
-	TIMER3->TBV = 0;
+//	TIMER3->TBV = 0;
+	TIMER1->TBV = 0;
 	// Enable Timer CCP
-	TimerEnable(TIMER3_BASE, TIMER_B);
+//	TimerEnable(TIMER3_BASE, TIMER_B);
+	TimerEnable(TIMER1_BASE, TIMER_B);
 	// Enable the PWM generator
 	PWMGenEnable(PWM0_BASE, PWM_GEN_1);
 	// Turn on the Output pins
@@ -71,12 +76,14 @@ void x_pwm_Stop(void){
 	// Disable the PWM generator
 	PWMGenDisable(PWM0_BASE, PWM_GEN_1);
 	// Disable Timer CCP
-	TimerDisable(TIMER3_BASE, TIMER_B);
+//	TimerDisable(TIMER3_BASE, TIMER_B);
+	TimerDisable(TIMER1_BASE, TIMER_B);
 
 	x_pulse_Gen_info.working = false;
 }
 
 uint32_t x_Timer_Value_Get(void){
-	return TimerValueGet(TIMER3_BASE, TIMER_B);
+//	return TimerValueGet(TIMER3_BASE, TIMER_B);
+	return TimerValueGet(TIMER1_BASE, TIMER_B);
 }
 
