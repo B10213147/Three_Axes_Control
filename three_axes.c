@@ -38,17 +38,25 @@ void axis_move(struct pulse_Gen_info *pulse_Gen, bool on_off){
 	else
 		set_speed(pulse_Gen, 0);
 
+	if(pulse_Gen->last_onoff_state && !on_off){
+		pulse_Gen->total = axis_timer_feedback(pulse_Gen);
+	}
+
 	if(pulse_Gen->speed != 0){
 		pulse_Generator(pulse_Gen, true);
 		pulse_Gen->finished = false;
 	}
 	else{
 		pulse_Generator(pulse_Gen, false);
+		pulse_Gen->current = axis_timer_feedback(pulse_Gen);
 //		pulse_Gen->finished = true;
 	}
+	pulse_Gen->last_onoff_state = on_off;
 }
 
 void axis_modify(struct pulse_Gen_info *pulse_Gen){
+	int current_pulses;
+
 	if(pulse_Gen->current - pulse_Gen->total > 0){
 		if(pulse_Gen == &x_pulse_Gen_info)
 			set_dir(x_axis, false);
@@ -67,6 +75,11 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 		else if(pulse_Gen == &z_pulse_Gen_info)
 			set_dir(z_axis, true);
 
+		current_pulses = pulse_Gen->current +
+				axis_timer_feedback(pulse_Gen) - pulse_Gen->changed_value;
+		if(current_pulses == pulse_Gen->total){
+			pulse_Gen->current = current_pulses;
+		}
 		pulse_Gen->speed = 1;
 	}
 	else{
@@ -78,11 +91,31 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 	if(pulse_Gen->speed != 0){
 		pulse_Generator(pulse_Gen, true);
 		pulse_Gen->finished = false;
+		if(pulse_Gen->current > pulse_Gen->total){
+			current_pulses = pulse_Gen->current - axis_timer_feedback(pulse_Gen);
+			if(current_pulses < pulse_Gen->total){
+				pulse_Gen->changed_value = pulse_Gen->current - current_pulses;
+				pulse_Gen->current = current_pulses;
+			}
+		}
 	}
 	else{
 		pulse_Generator(pulse_Gen, false);
 		pulse_Gen->finished = true;
 	}
+}
+
+uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen){
+	uint32_t counter = 0;
+
+	if(pulse_Gen == &x_pulse_Gen_info)
+		counter = x_Timer_Value_Get();
+//	else if(pulse_Gen == &y_pulse_Gen_info)
+//		counter = y_Timer_Value_Get();
+//	else if(pulse_Gen == &z_pulse_Gen_info)
+//		counter = z_Timer_Value_Get();
+
+	return counter;
 }
 
 void axes_init(void){
@@ -168,5 +201,6 @@ void set_dir(struct axis *axis, bool state){
 		else GPIOPinWrite(GPIOA_BASE, axis->dir_pin, axis->dir_pin);
 	}
 }
+
 
 
