@@ -47,16 +47,27 @@ void Axis_Config(void){
 void motion_control(void){
 	pipe_character_Get();
 
-	if(x_axis->onoff == true){
+	if(x_axis->onoff == true && x_axis->pulse_Gen->finished == true){
 		if(x_axis->next_move == 0)
-			move_unknow_distance(x_axis);
+			// interval means acceleration
+			rtos_task_create(move_unknow_distance, x_axis, 10);
 		else
 			move_know_distance(x_axis);
 	}
-	if(y_axis->onoff == true)
-		move_unknow_distance(y_axis);
-	if(z_axis->onoff == true)
-		move_unknow_distance(z_axis);
+	if(y_axis->onoff == true && y_axis->pulse_Gen->finished == true){
+		if(y_axis->next_move == 0)
+			// interval means acceleration
+			rtos_task_create(move_unknow_distance, y_axis, 10);
+		else
+			move_know_distance(y_axis);
+	}
+	if(z_axis->onoff == true && z_axis->pulse_Gen->finished == true){
+		if(z_axis->next_move == 0)
+			// interval means acceleration
+			rtos_task_create(move_unknow_distance, z_axis, 10);
+		else
+			move_know_distance(z_axis);
+	}
 }
 
 bool is_z_at_Home = true;
@@ -173,6 +184,10 @@ void move_unknow_distance(struct axis *n_axis){
 }
 
 void move_know_distance(struct axis *n_axis){
+	if(n_axis->onoff != false){
+		axis_move(n_axis->pulse_Gen, true);
+	}
+
 
 }
 

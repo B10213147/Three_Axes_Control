@@ -14,7 +14,9 @@
 void set_speed(struct pulse_Gen_info *pulse_Gen, int max_speed);
 void pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable);
 void set_dir(struct axis *axis, bool state);
+void pulse2position(struct pulse_Gen_info *pulse_Gen);
 
+extern float x_scale, y_scale, z_scale;
 struct axis *x_axis;
 struct axis *y_axis;
 struct axis *z_axis;
@@ -90,7 +92,32 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 	if(pulse_Gen->speed == 0){
 		pulse_Generator(pulse_Gen, false);
 		pulse_Gen->finished = true;
+		pulse2position(pulse_Gen);
 		rtos_running_task->delete_flag = true;
+	}
+}
+
+void pulse2position(struct pulse_Gen_info *pulse_Gen){
+	if(pulse_Gen == x_axis->pulse_Gen){
+		if(x_axis->dir == 'p')
+			x_axis->current_pos += pulse_Gen->current / x_scale;
+		else
+			x_axis->current_pos -= pulse_Gen->current / x_scale;
+		x_axis->next_move = 0;
+	}
+	else if(pulse_Gen == y_axis->pulse_Gen){
+		if(y_axis->dir == 'p')
+			y_axis->current_pos += pulse_Gen->current / y_scale;
+		else
+			y_axis->current_pos -= pulse_Gen->current / y_scale;
+		y_axis->next_move = 0;
+	}
+	else if(pulse_Gen == z_axis->pulse_Gen){
+		if(z_axis->dir == 'u')
+			z_axis->current_pos += pulse_Gen->current / z_scale;
+		else
+			z_axis->current_pos -= pulse_Gen->current / z_scale;
+		z_axis->next_move = 0;
 	}
 }
 

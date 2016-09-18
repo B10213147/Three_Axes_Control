@@ -26,6 +26,7 @@ extern void Axis_Config(void);
 extern void move_P2P(point p1, point p2);
 extern void drop_lift(float l1, float l2);	/* length unit: mm */
 extern void calculate_pos(void);
+extern void motion_control(void);
 
 extern struct rtos_pipe *mc_Fifo;
 
