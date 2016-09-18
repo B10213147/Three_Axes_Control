@@ -12,6 +12,8 @@
 struct rtos_pipe *mc_Fifo;
 float x_scale, y_scale, z_scale;		/* unit: pulse/mm */
 
+void move_unknow_distance(struct axis *n_axis);
+
 void Axis_Config(void){
 	AxisInitTypeDef Axis_x, Axis_y, Axis_z;
 
@@ -179,3 +181,17 @@ void drop_lift(float l1, float l2){
 	}
 	else is_z_at_Home = true;
 }
+
+void move_unknow_distance(struct axis *n_axis){
+	if(n_axis->onoff != false){
+		axis_move(n_axis->pulse_Gen, true);
+	}
+	else{
+		axis_move(n_axis->pulse_Gen, false);
+		if(n_axis->pulse_Gen->speed == 0){
+			rtos_task_create(axis_modify, n_axis->pulse_Gen, 1);
+			rtos_running_task->delete_flag = true;
+		}
+	}
+}
+
