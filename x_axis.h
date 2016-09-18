@@ -11,7 +11,10 @@
 #include "three_axes.h"
 
 extern void x_axis_Init(void);
+extern void x_pwm_Speed_Set(int speed);
 extern void x_pwm_Start(void);
+extern void x_pwm_Stop(void);
+extern uint32_t x_Timer_Value_Get(void);
 
 extern struct pulse_Gen_info x_pulse_Gen_info;
 

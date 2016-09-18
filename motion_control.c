@@ -16,27 +16,27 @@ void Axis_Config(void){
 	AxisInitTypeDef Axis_x, Axis_y, Axis_z;
 
 	Axis_x.MotorStepPerRev = 360/1.8;
-	Axis_x.DriverMicrostepping = 8;
+	Axis_x.DriverMicrostepping = 1;
 	Axis_x.MotorCoupleLeadscrew = 1;
 	Axis_x.LeadscrewPitch = 1.5;
 	x_scale = Axis_x.MotorStepPerRev * Axis_x.DriverMicrostepping *
 			Axis_x.MotorCoupleLeadscrew / Axis_x.LeadscrewPitch;
 
 	Axis_y.MotorStepPerRev = 360/1.8;
-	Axis_y.DriverMicrostepping = 8;
+	Axis_y.DriverMicrostepping = 1;
 	Axis_y.MotorCoupleLeadscrew = 1;
 	Axis_y.LeadscrewPitch = 1.5;
 	y_scale = Axis_y.MotorStepPerRev * Axis_y.DriverMicrostepping *
 			Axis_y.MotorCoupleLeadscrew / Axis_y.LeadscrewPitch;
 
 	Axis_z.MotorStepPerRev = 360/1.8;
-	Axis_z.DriverMicrostepping = 8;
+	Axis_z.DriverMicrostepping = 1;
 	Axis_z.MotorCoupleLeadscrew = 1;
 	Axis_z.LeadscrewPitch = 1.5;
 	z_scale = Axis_z.MotorStepPerRev * Axis_z.DriverMicrostepping *
 			Axis_z.MotorCoupleLeadscrew / Axis_z.LeadscrewPitch;
 
-	mc_Fifo = rtos_pipe_create(30);
+	mc_Fifo = rtos_pipe_create(50);
 	axes_init();
 }
 
@@ -163,7 +163,7 @@ void drop_lift(float l1, float l2){
 			z_axis->dir = 'd';
 			dz = -dz;
 		}
-		else x_axis->dir = 'u';
+		else z_axis->dir = 'u';
 
 		rtos_task_create(drop_lift, 0, 1);
 	}
