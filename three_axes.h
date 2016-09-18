@@ -21,11 +21,12 @@
 
 struct pulse_Gen_info{
 	int total;
-	int remain;
+	int changed_value;
 	int current;
-	int next;
+	int speed;
 	bool working;
 	bool finished;
+	bool last_onoff_state;
 };
 
 struct axis{
@@ -36,10 +37,13 @@ struct axis{
 	int remain;
 	float current_pos;	/* unit: mm */
 	float next_move;		/* unit: mm */
+	bool onoff;
 };
 
 extern void axes_init(void);
-extern void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses);
+extern void axis_move(struct pulse_Gen_info *pulse_Gen, bool on_off);
+extern void axis_modify(struct pulse_Gen_info *pulse_Gen);
+extern uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen);
 
 extern struct axis *x_axis;
 extern struct axis *y_axis;
