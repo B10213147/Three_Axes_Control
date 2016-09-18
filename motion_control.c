@@ -13,6 +13,8 @@ struct rtos_pipe *mc_Fifo;
 float x_scale, y_scale, z_scale;		/* unit: pulse/mm */
 
 void move_unknow_distance(struct axis *n_axis);
+void move_know_distance(struct axis *n_axis);
+void pipe_character_Get(void);
 
 void Axis_Config(void){
 	AxisInitTypeDef Axis_x, Axis_y, Axis_z;
@@ -42,49 +44,24 @@ void Axis_Config(void){
 	axes_init();
 }
 
+void motion_control(void){
+	pipe_character_Get();
+
+	if(x_axis->onoff == true){
+		if(x_axis->next_move == 0)
+			move_unknow_distance(x_axis);
+		else
+			move_know_distance(x_axis);
+	}
+	if(y_axis->onoff == true)
+		move_unknow_distance(y_axis);
+	if(z_axis->onoff == true)
+		move_unknow_distance(z_axis);
+}
+
 bool is_z_at_Home = true;
 void calculate_pos(void){
-	char temp;
-	/*
-	 * Get pipe character
-	 */
-	while(rtos_pipe_read(mc_Fifo, &temp, 1)){
-		switch(temp){
-		// Arrow up
-		case 0x41:
-			x_axis->next_move += 0.1;
-			break;
-			// Arrow down
-		case 0x42:
-			x_axis->next_move -= 0.1;
-			break;
-			// Arrow right
-		case 0x43:
-			y_axis->next_move += 0.1;
-			break;
-			// Arrow left
-		case 0x44:
-			y_axis->next_move -= 0.1;
-			break;
-			// Go Home
-		case 'H':
-			x_axis->next_move -= x_axis->current_pos;
-			y_axis->next_move -= y_axis->current_pos;
-			break;
-			// z_axis goes up
-		case 'u':
-			z_axis->next_move += 0.1;
-			break;
-			// z_axis goes down
-		case 'd':
-			z_axis->next_move -= 0.1;
-			break;
-			// z_axis goes home
-		case 'U':
-			z_axis->next_move -= z_axis->current_pos;
-			break;
-		}
-	}
+	pipe_character_Get();
 
 	/*
 	 * x_axis & y_axis move
@@ -192,6 +169,68 @@ void move_unknow_distance(struct axis *n_axis){
 			rtos_task_create(axis_modify, n_axis->pulse_Gen, 1);
 			rtos_running_task->delete_flag = true;
 		}
+	}
+}
+
+void move_know_distance(struct axis *n_axis){
+
+}
+
+void pipe_character_Get(void){
+	char temp;
+	/*
+	 * Get pipe character
+	 */
+	if(rtos_pipe_read(mc_Fifo, &temp, 1)){
+		do{
+			switch(temp){
+			// Arrow up
+			case 0x41:
+				x_axis->onoff = true;
+				x_axis->dir = 'p';
+				break;
+				// Arrow down
+			case 0x42:
+				x_axis->onoff = true;
+				x_axis->dir = 'n';
+				break;
+				// Arrow right
+			case 0x43:
+				y_axis->onoff = true;
+				y_axis->dir = 'p';
+				break;
+				// Arrow left
+			case 0x44:
+				y_axis->onoff = true;
+				y_axis->dir = 'n';
+				break;
+				// Go Home
+			case 'H':
+				x_axis->next_move -= x_axis->current_pos;
+				y_axis->next_move -= y_axis->current_pos;
+				break;
+				// z_axis goes up
+			case 'u':
+				z_axis->onoff = true;
+				z_axis->dir = 'u';
+				break;
+				// z_axis goes down
+			case 'd':
+				z_axis->onoff = true;
+				z_axis->dir = 'd';
+				break;
+				// z_axis goes home
+			case 'U':
+				z_axis->next_move -= z_axis->current_pos;
+				break;
+			}
+		}while(rtos_pipe_read(mc_Fifo, &temp, 1));
+	}
+	else{
+		// No character in pipe
+		x_axis->onoff = false;
+		y_axis->onoff = false;
+		z_axis->onoff = false;
 	}
 }
 
