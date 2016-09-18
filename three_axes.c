@@ -18,8 +18,8 @@ void set_dir(struct axis *axis, bool state);
 struct axis *x_axis;
 struct axis *y_axis;
 struct axis *z_axis;
-const float duty = 0.05;
-const uint32_t full_Period = 16000/64*200; //unit = ticks/5ms
+const float duty = 0.5;
+const uint32_t full_Period = 16000/2*5; //unit = ticks/5ms
 
 //!	state == true means speed increase or constant speed
 //!	state == false means speed decrease
@@ -66,23 +66,6 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 
 		pulse_Gen->speed = 6;
 	}
-	else if(pulse_Gen->current - pulse_Gen->total < 0){
-		if(pulse_Gen == &x_pulse_Gen_info)
-			set_dir(x_axis, true);
-		else if(pulse_Gen == &y_pulse_Gen_info)
-			set_dir(y_axis, true);
-		else if(pulse_Gen == &z_pulse_Gen_info)
-			set_dir(z_axis, true);
-
-		pulse_Gen->speed = 1;
-		// Second calculation
-		current_pulses = pulse_Gen->current +
-				axis_timer_feedback(pulse_Gen) - pulse_Gen->changed_value;
-		if(current_pulses == pulse_Gen->total){
-			pulse_Gen->current = current_pulses;
-			pulse_Gen->speed = 0;
-		}
-	}
 	else{
 		pulse_Gen->speed = 0;
 	}
@@ -92,16 +75,19 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 	if(pulse_Gen->speed != 0){
 		pulse_Generator(pulse_Gen, true);
 		pulse_Gen->finished = false;
-		// First calculation
-		if(pulse_Gen->current > pulse_Gen->total){
-			current_pulses = pulse_Gen->current - axis_timer_feedback(pulse_Gen);
-			if(current_pulses < pulse_Gen->total){
-				pulse_Gen->changed_value = pulse_Gen->current - current_pulses;
-				pulse_Gen->current = current_pulses;
-			}
+	}
+
+	// First calculation
+	if(pulse_Gen->current > pulse_Gen->total){
+		current_pulses = pulse_Gen->current - axis_timer_feedback(pulse_Gen);
+		if(current_pulses <= pulse_Gen->total){
+			pulse_Gen->changed_value = pulse_Gen->current - current_pulses;
+			pulse_Gen->current = current_pulses;
+			pulse_Gen->speed = 0;
 		}
 	}
-	else{
+
+	if(pulse_Gen->speed == 0){
 		pulse_Generator(pulse_Gen, false);
 		pulse_Gen->finished = true;
 		rtos_running_task->delete_flag = true;
@@ -113,30 +99,29 @@ uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen){
 
 	if(pulse_Gen == &x_pulse_Gen_info)
 		counter = x_Timer_Value_Get();
-//	else if(pulse_Gen == &y_pulse_Gen_info)
-//		counter = y_Timer_Value_Get();
-//	else if(pulse_Gen == &z_pulse_Gen_info)
-//		counter = z_Timer_Value_Get();
+	else if(pulse_Gen == &y_pulse_Gen_info)
+		counter = y_Timer_Value_Get();
+	else if(pulse_Gen == &z_pulse_Gen_info)
+		counter = z_Timer_Value_Get();
 
 	return counter;
 }
 
 void axes_init(void){
 	//Configure PWM Clock to match system
-	SysCtlPWMClockSet(SYSCTL_PWMDIV_64);
+	SysCtlPWMClockSet(SYSCTL_PWMDIV_2);
 
 	// Enable the peripherals used by this program.
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0);
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER2);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER3);
 
 	x_axis_Init();
-//	y_axis_Init();
-//	z_axis_Init();
+	y_axis_Init();
+	z_axis_Init();
 }
 
 void set_speed(struct pulse_Gen_info *pulse_Gen, int max_speed){
@@ -155,10 +140,10 @@ void set_speed(struct pulse_Gen_info *pulse_Gen, int max_speed){
 
 	if(pulse_Gen == &x_pulse_Gen_info)
 		x_pwm_Speed_Set(pulse_Gen->speed);
-//	else if(pulse_Gen == &y_pulse_Gen_info)
-//		y_pwm_Speed_Set(pulse_Gen->speed);
-//	else if(pulse_Gen == &z_pulse_Gen_info)
-//		z_pwm_Speed_Set(pulse_Gen->speed);
+	else if(pulse_Gen == &y_pulse_Gen_info)
+		y_pwm_Speed_Set(pulse_Gen->speed);
+	else if(pulse_Gen == &z_pulse_Gen_info)
+		z_pwm_Speed_Set(pulse_Gen->speed);
 }
 
 //!	state == true means enable PWM
@@ -169,10 +154,10 @@ void pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable){
 
 		if(pulse_Gen == &x_pulse_Gen_info)
 			x_pwm_Stop();
-//		else if(pulse_Gen == &y_pulse_Gen_info)
-//			y_pwm_Stop();
-//		else if(pulse_Gen == &z_pulse_Gen_info)
-//			z_pwm_Stop();
+		else if(pulse_Gen == &y_pulse_Gen_info)
+			y_pwm_Stop();
+		else if(pulse_Gen == &z_pulse_Gen_info)
+			z_pwm_Stop();
 
 		enable_os();
 	}

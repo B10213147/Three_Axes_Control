@@ -37,6 +37,7 @@ struct axis{
 	int remain;
 	float current_pos;	/* unit: mm */
 	float next_move;		/* unit: mm */
+	bool onoff;
 };
 
 extern void axes_init(void);

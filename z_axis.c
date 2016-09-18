@@ -11,11 +11,7 @@
 #include "driverlib/timer.h"
 #include "driverlib/gpio.h"
 #include "driverlib/pin_map.h"
-#include "driverlib/interrupt.h"
 #include "driverlib/pwm.h"
-#include "inc/hw_ints.h"
-
-void z_timer_End(void);
 
 struct pulse_Gen_info z_pulse_Gen_info =
 	{0, 0, 0, 0, false, true};
@@ -42,39 +38,41 @@ void z_axis_Init(void){
 	//
 	// Configure the timer captures.
 	//
-	TimerConfigure(TIMER2_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT | TIMER_CFG_B_CAP_COUNT);
-	TimerIntRegister(TIMER2_BASE, TIMER_B, z_timer_End);
-	IntPrioritySet(INT_TIMER2B, 0x20);	//set Timer2B to 1 priority
-	TimerMatchSet(TIMER2_BASE, TIMER_B, 0);
-	TimerIntEnable(TIMER2_BASE, TIMER_CAPB_MATCH);
+	TimerConfigure(TIMER2_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_COUNT_UP | TIMER_CFG_B_CAP_COUNT_UP);
 }
 
-void z_pwm_Start(void){
-	uint32_t period = full_Period / z_pulse_Gen_info.current;	//unit = ticks/cycle
+void z_pwm_Speed_Set(int speed){
+	uint32_t period = full_Period / speed;	//unit = ticks/cycle
 	uint32_t width_H = period * duty;
-
-	TimerLoadSet(TIMER2_BASE, TIMER_B, z_pulse_Gen_info.current);
-
-	TimerEnable(TIMER2_BASE, TIMER_B);
 
 	PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, period);
 	PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, width_H);
+}
+
+void z_pwm_Start(void){
+	// Reset Timer counter value
+	TIMER2->TBV = 0;
+	// Enable Timer CCP
+	TimerEnable(TIMER2_BASE, TIMER_B);
 	// Enable the PWM generator
 	PWMGenEnable(PWM0_BASE, PWM_GEN_3);
 	// Turn on the Output pins
 	PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, true);
+
+	z_pulse_Gen_info.working = true;
 }
 
-void z_timer_End(void){
-	disable_os();
-	if(TimerIntStatus(TIMER2_BASE, true) & TIMER_CAPB_MATCH){
-		// Disable the PWM generator
-		PWMGenDisable(PWM0_BASE, PWM_GEN_3);
-		// Turn off the Output pins
-		PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, false);
-		TimerIntClear(TIMER2_BASE, TIMER_CAPB_MATCH);
-		z_pulse_Gen_info.working = false;
-	}
-	enable_os();
+void z_pwm_Stop(void){
+	// Turn off the Output pins
+	PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, false);
+	// Disable the PWM generator
+	PWMGenDisable(PWM0_BASE, PWM_GEN_3);
+	// Disable Timer CCP
+	TimerDisable(TIMER2_BASE, TIMER_B);
+
+	z_pulse_Gen_info.working = false;
 }
 
+uint32_t z_Timer_Value_Get(void){
+	return TimerValueGet(TIMER2_BASE, TIMER_B);
+}

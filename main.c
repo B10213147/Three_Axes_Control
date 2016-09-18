@@ -13,7 +13,7 @@
 void startup(void);
 void print_string(char *string);
 void arrow_decode(void);
-void foo(void);
+extern void move_unknow_distance(struct axis *n_axis);
 
 point Home = {0, 0};
 int main(void) {
@@ -40,28 +40,16 @@ int main(void) {
 			switch(temp){
 			case 'R':
 				print_string("Right botton pressed\n\r");
-				rtos_task_create(foo, 0, 200);
+				if(z_axis->onoff != true)
+					// interval means acceleration
+					rtos_task_create(move_unknow_distance, z_axis, 200);
+				z_axis->onoff = true;
 				break;
 			case 'L':
 				print_string("Left botton pressed\n\r");
+				z_axis->onoff = false;
 				break;
 			}
-		}
-	}
-}
-
-int times = 15;
-void foo(void){
-	if(times>0){
-		axis_move(x_axis->pulse_Gen, true);
-		times--;
-	}
-	else{
-		axis_move(x_axis->pulse_Gen, false);
-		if(x_axis->pulse_Gen->speed == 0){
-			rtos_task_create(axis_modify, x_axis->pulse_Gen, 1);
-			rtos_running_task->delete_flag = true;
-			times = 15;
 		}
 	}
 }
