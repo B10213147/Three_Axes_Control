@@ -8,20 +8,21 @@
 #include "keys_driver.h"
 #include "uart_driver.h"
 #include "motion_control.h"
+#include "three_axes.h"
 
 void startup(void);
 void print_string(char *string);
 void arrow_decode(void);
+extern void move_unknow_distance(struct axis *n_axis);
 
 point Home = {0, 0};
 int main(void) {
 	startup();
-
+//
 	rtos_task_create(keys_driver, 0, 2);
-	rtos_task_create(uart_driver, 0, 1);
-	rtos_task_create(calculate_pos, 0, 50);
+//	rtos_task_create(uart_driver, 0, 1);
+//	rtos_task_create(calculate_pos, 0, 50);
 
-	point p1 = {0.1, 0.15};
 	char temp;
 	while(1){
 		if(rtos_pipe_read(uart_rx_Fifo, &temp, 1)){
@@ -39,9 +40,14 @@ int main(void) {
 			switch(temp){
 			case 'R':
 				print_string("Right botton pressed\n\r");
+				if(z_axis->onoff != true)
+					// interval means acceleration
+					rtos_task_create(move_unknow_distance, z_axis, 200);
+				z_axis->onoff = true;
 				break;
 			case 'L':
 				print_string("Left botton pressed\n\r");
+				z_axis->onoff = false;
 				break;
 			}
 		}
