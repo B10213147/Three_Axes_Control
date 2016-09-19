@@ -49,28 +49,35 @@ void motion_control(void){
 	pipe_character_Get();
 
 	if(x_axis->onoff == true && x_axis->pulse_Gen->finished == true){
-		if(x_axis->next_move == 0)
+		if(x_axis->next_move == 0){
+			axis_move(x_axis->pulse_Gen, true);
 			// interval means acceleration
 			rtos_task_create(move_unknow_distance, x_axis, 10);
-		else
+		}
+		else{
 			axis_move(x_axis->pulse_Gen, true);
 			rtos_task_create(move_know_distance, x_axis, 10);
+		}
 	}
 	if(y_axis->onoff == true && y_axis->pulse_Gen->finished == true){
-		if(y_axis->next_move == 0)
+		if(y_axis->next_move == 0){
 			// interval means acceleration
 			rtos_task_create(move_unknow_distance, y_axis, 10);
-		else
+		}
+		else{
 			axis_move(y_axis->pulse_Gen, true);
-			move_know_distance(y_axis);
+			rtos_task_create(move_know_distance, y_axis, 10);
+		}
 	}
 	if(z_axis->onoff == true && z_axis->pulse_Gen->finished == true){
-		if(z_axis->next_move == 0)
+		if(z_axis->next_move == 0){
 			// interval means acceleration
 			rtos_task_create(move_unknow_distance, z_axis, 10);
-		else
+		}
+		else{
 			axis_move(z_axis->pulse_Gen, true);
-			move_know_distance(z_axis);
+			rtos_task_create(move_know_distance, z_axis, 10);
+		}
 	}
 }
 
@@ -236,10 +243,16 @@ void pipe_character_Get(void){
 				break;
 				// Go Home
 			case 'H':
-				x_axis->next_move -= x_axis->current_pos;
+				x_axis->next_move = -x_axis->current_pos;
 				x_axis->onoff = true;
-				y_axis->next_move -= y_axis->current_pos;
+				if(x_axis->next_move*1000 < 0) x_axis->dir = 'n';
+				else x_axis->dir = 'p';
+
+				y_axis->next_move = -y_axis->current_pos;
 				y_axis->onoff = true;
+				if(y_axis->next_move*1000 < 0) y_axis->dir = 'n';
+				else y_axis->dir = 'p';
+
 				break;
 				// z_axis goes up
 			case 'u':
@@ -253,8 +266,10 @@ void pipe_character_Get(void){
 				break;
 				// z_axis goes home
 			case 'U':
-				z_axis->next_move -= z_axis->current_pos;
+				z_axis->next_move = -z_axis->current_pos;
 				z_axis->onoff = true;
+				if(z_axis->next_move*1000 < 0) z_axis->dir = 'n';
+				else z_axis->dir = 'p';
 				break;
 			}
 		}while(rtos_pipe_read(mc_Fifo, &temp, 1));

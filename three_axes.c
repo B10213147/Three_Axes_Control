@@ -66,7 +66,7 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 		else if(pulse_Gen == &z_pulse_Gen_info)
 			set_dir(z_axis, false);
 
-		pulse_Gen->speed = 6;
+		pulse_Gen->speed = 5;
 	}
 	else{
 		pulse_Gen->speed = 0;
@@ -105,7 +105,8 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 			z_axis->current_pos += pulse2position(pulse_Gen);
 			z_axis->next_move = 0;
 		}
-
+		pulse_Gen->current = 0;
+		pulse_Gen->total = 0;
 		rtos_running_task->delete_flag = true;
 	}
 }
