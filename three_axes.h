@@ -35,8 +35,8 @@ struct axis{
 	char dir;
 	int total;
 	int remain;
-	float current_pos;	/* unit: mm */
-	float next_move;		/* unit: mm */
+	double current_pos;	/* unit: mm */
+	double next_move;		/* unit: mm */
 	bool onoff;
 };
 
@@ -44,6 +44,7 @@ extern void axes_init(void);
 extern void axis_move(struct pulse_Gen_info *pulse_Gen, bool on_off);
 extern void axis_modify(struct pulse_Gen_info *pulse_Gen);
 extern uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen);
+extern double pulse2position(struct pulse_Gen_info *pulse_Gen);
 
 extern struct axis *x_axis;
 extern struct axis *y_axis;

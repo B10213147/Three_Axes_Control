@@ -5,12 +5,13 @@
  *      Author: Harvard Tseng
  */
 
+#include "math.h"
 #include "motion_control.h"
 #include "rtos.h"
 #include "three_axes.h"
 
 struct rtos_pipe *mc_Fifo;
-float x_scale, y_scale, z_scale;		/* unit: pulse/mm */
+double x_scale, y_scale, z_scale;		/* unit: pulse/mm */
 
 void move_unknow_distance(struct axis *n_axis);
 void move_know_distance(struct axis *n_axis);
@@ -52,13 +53,15 @@ void motion_control(void){
 			// interval means acceleration
 			rtos_task_create(move_unknow_distance, x_axis, 10);
 		else
-			move_know_distance(x_axis);
+			axis_move(x_axis->pulse_Gen, true);
+			rtos_task_create(move_know_distance, x_axis, 10);
 	}
 	if(y_axis->onoff == true && y_axis->pulse_Gen->finished == true){
 		if(y_axis->next_move == 0)
 			// interval means acceleration
 			rtos_task_create(move_unknow_distance, y_axis, 10);
 		else
+			axis_move(y_axis->pulse_Gen, true);
 			move_know_distance(y_axis);
 	}
 	if(z_axis->onoff == true && z_axis->pulse_Gen->finished == true){
@@ -66,6 +69,7 @@ void motion_control(void){
 			// interval means acceleration
 			rtos_task_create(move_unknow_distance, z_axis, 10);
 		else
+			axis_move(z_axis->pulse_Gen, true);
 			move_know_distance(z_axis);
 	}
 }
@@ -184,11 +188,22 @@ void move_unknow_distance(struct axis *n_axis){
 }
 
 void move_know_distance(struct axis *n_axis){
+	// Check if reach move value
+	if(fabs(n_axis->next_move)*1000 >= fabs(pulse2position(n_axis->pulse_Gen))*1000){
+		n_axis->onoff = true;
+	}
+	else n_axis->onoff = false;
+
 	if(n_axis->onoff != false){
 		axis_move(n_axis->pulse_Gen, true);
 	}
-
-
+	else{
+		axis_move(n_axis->pulse_Gen, false);
+		if(n_axis->pulse_Gen->speed == 0){
+			rtos_task_create(axis_modify, n_axis->pulse_Gen, 1);
+			rtos_running_task->delete_flag = true;
+		}
+	}
 }
 
 void pipe_character_Get(void){
@@ -222,7 +237,9 @@ void pipe_character_Get(void){
 				// Go Home
 			case 'H':
 				x_axis->next_move -= x_axis->current_pos;
+				x_axis->onoff = true;
 				y_axis->next_move -= y_axis->current_pos;
+				y_axis->onoff = true;
 				break;
 				// z_axis goes up
 			case 'u':
@@ -237,6 +254,7 @@ void pipe_character_Get(void){
 				// z_axis goes home
 			case 'U':
 				z_axis->next_move -= z_axis->current_pos;
+				z_axis->onoff = true;
 				break;
 			}
 		}while(rtos_pipe_read(mc_Fifo, &temp, 1));
