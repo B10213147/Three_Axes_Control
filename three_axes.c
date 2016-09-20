@@ -16,9 +16,7 @@ void pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable);
 void set_dir(struct axis *axis, bool state);
 
 extern double x_scale, y_scale, z_scale;
-struct axis *x_axis;
-struct axis *y_axis;
-struct axis *z_axis;
+struct axis *x_axis, *y_axis, *z_axis;
 const float duty = 0.5;
 const uint32_t full_Period = 16000/2*5; //unit = ticks/5ms
 

@@ -48,7 +48,9 @@ void Axis_Config(void){
 void motion_control(void){
 	pipe_character_Get();
 
-	if(x_axis->onoff == true && x_axis->pulse_Gen->finished == true){
+	if(z_axis->current_pos*1000 == 0 &&
+			x_axis->onoff == true &&
+			x_axis->pulse_Gen->finished == true){
 		if(x_axis->next_move == 0){
 			axis_move(x_axis->pulse_Gen, true);
 			// interval means acceleration
@@ -59,7 +61,9 @@ void motion_control(void){
 			rtos_task_create(move_know_distance, x_axis, 10);
 		}
 	}
-	if(y_axis->onoff == true && y_axis->pulse_Gen->finished == true){
+	if(z_axis->current_pos*1000 == 0 &&
+			y_axis->onoff == true &&
+			y_axis->pulse_Gen->finished == true){
 		if(y_axis->next_move == 0){
 			// interval means acceleration
 			rtos_task_create(move_unknow_distance, y_axis, 10);
@@ -69,7 +73,9 @@ void motion_control(void){
 			rtos_task_create(move_know_distance, y_axis, 10);
 		}
 	}
-	if(z_axis->onoff == true && z_axis->pulse_Gen->finished == true){
+	if(z_axis->onoff == true && z_axis->pulse_Gen->finished == true &&
+			x_axis->pulse_Gen->finished != false &&
+			y_axis->pulse_Gen->finished != false){
 		if(z_axis->next_move == 0){
 			// interval means acceleration
 			rtos_task_create(move_unknow_distance, z_axis, 10);
@@ -79,106 +85,6 @@ void motion_control(void){
 			rtos_task_create(move_know_distance, z_axis, 10);
 		}
 	}
-}
-
-bool is_z_at_Home = true;
-void calculate_pos(void){
-	pipe_character_Get();
-
-	/*
-	 * x_axis & y_axis move
-	 */
-	if(is_z_at_Home == true && z_axis->pulse_Gen->finished != false &&
-			x_axis->pulse_Gen->finished != false &&
-			y_axis->pulse_Gen->finished != false &&
-			(x_axis->next_move*100 != 0 || y_axis->next_move*100 != 0)){
-		point cur_pos = {x_axis->current_pos, y_axis->current_pos};
-		point next_pos;
-		next_pos.x = cur_pos.x + x_axis->next_move;
-		next_pos.y = cur_pos.y + y_axis->next_move;
-
-		move_P2P(cur_pos, next_pos);
-
-		x_axis->current_pos = next_pos.x;
-		x_axis->next_move = 0;
-		y_axis->current_pos = next_pos.y;
-		y_axis->next_move = 0;
-	}
-
-	/*
-	 * z_axis move
-	 */
-	if(z_axis->pulse_Gen->finished != false &&
-			x_axis->pulse_Gen->finished != false &&
-			y_axis->pulse_Gen->finished != false &&
-			z_axis->next_move*100 != 0){
-		float cur_pos = z_axis->current_pos;
-		float next_pos = cur_pos + z_axis->next_move;
-
-		drop_lift(cur_pos, next_pos);
-
-		z_axis->current_pos = next_pos;
-		z_axis->next_move = 0;
-	}
-}
-
-void move_P2P(point p1, point p2){
-	int dx = 0, dy = 0;
-
-	if(x_axis->pulse_Gen->finished != false &&
-			y_axis->pulse_Gen->finished != false){
-		dx = (p2.x - p1.x) * x_scale;
-		dy = (p2.y - p1.y) * y_scale;
-
-		if(dx < 0){
-			x_axis->dir = 'n';
-			dx = -dx;
-		}
-		else x_axis->dir = 'p';
-		if(dy < 0){
-			y_axis->dir = 'n';
-			dy = -dy;
-		}
-		else y_axis->dir = 'p';
-
-		rtos_task_create(move_P2P, 0, 1);
-	}
-
-	axis_move(x_axis->pulse_Gen, dx);
-	axis_move(y_axis->pulse_Gen, dy);
-
-	if(x_axis->pulse_Gen->finished != false &&
-			y_axis->pulse_Gen->finished != false){
-		rtos_running_task->delete_flag = true;
-	}
-}
-
-//!	length unit: mm
-void drop_lift(float l1, float l2){
-	int dz = 0;
-
-	if(z_axis->pulse_Gen->finished != false){
-		dz = (l2 - l1) * z_scale;
-
-		if(dz < 0){
-			z_axis->dir = 'd';
-			dz = -dz;
-		}
-		else z_axis->dir = 'u';
-
-		rtos_task_create(drop_lift, 0, 1);
-	}
-
-	axis_move(z_axis->pulse_Gen, dz);
-
-	if(z_axis->pulse_Gen->finished != false){
-		rtos_running_task->delete_flag = true;
-	}
-
-	if(z_axis->current_pos*100 != 0){
-		is_z_at_Home = false;
-	}
-	else is_z_at_Home = true;
 }
 
 void move_unknow_distance(struct axis *n_axis){
@@ -196,13 +102,14 @@ void move_unknow_distance(struct axis *n_axis){
 
 void move_know_distance(struct axis *n_axis){
 	// Check if reach move value
-	if(fabs(n_axis->next_move)*1000 >= fabs(pulse2position(n_axis->pulse_Gen))*1000){
+	if(fabs(n_axis->next_move)*1000 > fabs(pulse2position(n_axis->pulse_Gen))*1000){
 		n_axis->onoff = true;
 	}
 	else n_axis->onoff = false;
 
 	if(n_axis->onoff != false){
 		axis_move(n_axis->pulse_Gen, true);
+		n_axis->pulse_Gen->total = fabs(n_axis->next_move * z_scale);
 	}
 	else{
 		axis_move(n_axis->pulse_Gen, false);
@@ -268,8 +175,8 @@ void pipe_character_Get(void){
 			case 'U':
 				z_axis->next_move = -z_axis->current_pos;
 				z_axis->onoff = true;
-				if(z_axis->next_move*1000 < 0) z_axis->dir = 'n';
-				else z_axis->dir = 'p';
+				if(z_axis->next_move*1000 < 0) z_axis->dir = 'd';
+				else z_axis->dir = 'u';
 				break;
 			}
 		}while(rtos_pipe_read(mc_Fifo, &temp, 1));

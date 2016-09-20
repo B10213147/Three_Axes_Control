@@ -46,9 +46,7 @@ extern void axis_modify(struct pulse_Gen_info *pulse_Gen);
 extern uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen);
 extern double pulse2position(struct pulse_Gen_info *pulse_Gen);
 
-extern struct axis *x_axis;
-extern struct axis *y_axis;
-extern struct axis *z_axis;
+extern struct axis *x_axis, *y_axis, *z_axis;
 extern const float duty;
 extern const uint32_t full_Period;
 

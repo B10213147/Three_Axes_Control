@@ -4,7 +4,6 @@
 #include "rtos.h"
 #include "TM4C123GH6PM.h"
 #include "driverlib/sysctl.h"
-#include "pulse_train.h"
 #include "keys_driver.h"
 #include "uart_driver.h"
 #include "motion_control.h"
@@ -18,7 +17,6 @@ int main(void) {
 //
 	rtos_task_create(keys_driver, 0, 2);
 	rtos_task_create(uart_driver, 0, 1);
-//	rtos_task_create(calculate_pos, 0, 50);
 	rtos_task_create(motion_control, 0, 15);
 
 	char temp;
