@@ -70,7 +70,6 @@ void axis_modify(struct axis *axis){
 	if(axis->pulse_Gen->current > axis->pulse_Gen->total){
 		current_pulses = axis->pulse_Gen->current - axis_timer_feedback(axis->pulse_Gen);
 		if(current_pulses <= axis->pulse_Gen->total){
-			axis->pulse_Gen->changed_value = axis->pulse_Gen->current - current_pulses;
 			axis->pulse_Gen->current = current_pulses;
 			axis->pulse_Gen->speed = 0;
 		}

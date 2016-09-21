@@ -14,7 +14,7 @@
 #include "driverlib/pwm.h"
 
 struct pulse_Gen_info z_pulse_Gen_info =
-	{0, 0, 0, 0, false, true};
+	{0, 0, 0, false, true, false};
 
 void z_axis_Init(void){
 	z_axis = (struct axis*)malloc(sizeof(struct axis));

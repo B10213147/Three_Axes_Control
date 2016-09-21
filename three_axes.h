@@ -15,13 +15,8 @@
 #include "y_axis.h"
 #include "z_axis.h"
 
-#define RED		GPIO_PIN_1
-#define BLUE	GPIO_PIN_2
-#define GREEN	GPIO_PIN_3
-
 struct pulse_Gen_info{
 	int total;
-	int changed_value;
 	int current;
 	int speed;
 	bool working;
@@ -34,8 +29,6 @@ struct axis{
 	bool onoff;
 	uint8_t dir_pin;
 	char dir;
-	int total;
-	int remain;
 	double current_pos;	/* unit: mm */
 	double next_move;	/* unit: mm */
 	double scale;		/* unit: pulse/mm */

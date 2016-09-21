@@ -14,7 +14,7 @@
 #include "driverlib/pwm.h"
 
 struct pulse_Gen_info y_pulse_Gen_info =
-	{0, 0, 0, 0, false, true};
+	{0, 0, 0, false, true, false};
 
 void y_axis_Init(void){
 	y_axis = (struct axis*)malloc(sizeof(struct axis));

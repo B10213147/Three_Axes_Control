@@ -42,7 +42,7 @@ void Axis_Config(void){
 	z_axis->scale = Axis_z.MotorStepPerRev * Axis_z.DriverMicrostepping *
 			Axis_z.MotorCoupleLeadscrew / Axis_z.LeadscrewPitch;
 
-	mc_Fifo = rtos_pipe_create(50);
+	mc_Fifo = rtos_pipe_create(20);
 }
 
 void motion_control(void){
