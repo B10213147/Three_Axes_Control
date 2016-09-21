@@ -15,9 +15,8 @@ void set_speed(struct pulse_Gen_info *pulse_Gen, int max_speed);
 void pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable);
 void set_dir(struct axis *axis, bool state);
 
-struct axis *x_axis;
-struct axis *y_axis;
-struct axis *z_axis;
+extern double x_scale, y_scale, z_scale;
+struct axis *x_axis, *y_axis, *z_axis;
 const float duty = 0.5;
 const uint32_t full_Period = 16000/2*5; //unit = ticks/5ms
 
@@ -48,8 +47,9 @@ void axis_move(struct pulse_Gen_info *pulse_Gen, bool on_off){
 	}
 	else{
 		pulse_Generator(pulse_Gen, false);
-		pulse_Gen->current = axis_timer_feedback(pulse_Gen);
 	}
+
+	pulse_Gen->current = axis_timer_feedback(pulse_Gen);
 	pulse_Gen->last_onoff_state = on_off;
 }
 
@@ -64,7 +64,7 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 		else if(pulse_Gen == &z_pulse_Gen_info)
 			set_dir(z_axis, false);
 
-		pulse_Gen->speed = 6;
+		pulse_Gen->speed = 5;
 	}
 	else{
 		pulse_Gen->speed = 0;
@@ -90,8 +90,48 @@ void axis_modify(struct pulse_Gen_info *pulse_Gen){
 	if(pulse_Gen->speed == 0){
 		pulse_Generator(pulse_Gen, false);
 		pulse_Gen->finished = true;
+
+		if(pulse_Gen == x_axis->pulse_Gen){
+			x_axis->current_pos += pulse2position(pulse_Gen);
+			x_axis->next_move = 0;
+		}
+		else if(pulse_Gen == y_axis->pulse_Gen){
+			y_axis->current_pos += pulse2position(pulse_Gen);
+			y_axis->next_move = 0;
+		}
+		else if(pulse_Gen == z_axis->pulse_Gen){
+			z_axis->current_pos += pulse2position(pulse_Gen);
+			z_axis->next_move = 0;
+		}
+		pulse_Gen->current = 0;
+		pulse_Gen->total = 0;
 		rtos_running_task->delete_flag = true;
 	}
+}
+
+double pulse2position(struct pulse_Gen_info *pulse_Gen){
+	double changed_pos;
+
+	if(pulse_Gen == x_axis->pulse_Gen){
+		if(x_axis->dir == 'p')
+			changed_pos = pulse_Gen->current / x_scale;
+		else
+			changed_pos = -pulse_Gen->current / x_scale;
+	}
+	else if(pulse_Gen == y_axis->pulse_Gen){
+		if(y_axis->dir == 'p')
+			changed_pos = pulse_Gen->current / y_scale;
+		else
+			changed_pos = -pulse_Gen->current / y_scale;
+	}
+	else if(pulse_Gen == z_axis->pulse_Gen){
+		if(z_axis->dir == 'u')
+			changed_pos = pulse_Gen->current / z_scale;
+		else
+			changed_pos = -pulse_Gen->current / z_scale;
+	}
+
+	return changed_pos;
 }
 
 uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen){
