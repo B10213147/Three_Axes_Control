@@ -11,140 +11,93 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
 
+uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen);
 void set_speed(struct pulse_Gen_info *pulse_Gen, int max_speed);
 void pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable);
 void set_dir(struct axis *axis, bool state);
 
-extern double x_scale, y_scale, z_scale;
 struct axis *x_axis, *y_axis, *z_axis;
 const float duty = 0.5;
 const uint32_t full_Period = 16000/2*5; //unit = ticks/5ms
 
 //!	state == true means speed increase or constant speed
 //!	state == false means speed decrease
-void axis_move(struct pulse_Gen_info *pulse_Gen, bool on_off){
-	if(pulse_Gen->finished == true){
-		if(pulse_Gen == &x_pulse_Gen_info)
-			set_dir(x_axis, true);
-		else if(pulse_Gen == &y_pulse_Gen_info)
-			set_dir(y_axis, true);
-		else if(pulse_Gen == &z_pulse_Gen_info)
-			set_dir(z_axis, true);
+void axis_move(struct axis *axis, bool on_off){
+	if(axis->pulse_Gen->finished == true){
+		set_dir(axis, true);
 	}
 
 	if(on_off != false)
-		set_speed(pulse_Gen, 12);
+		set_speed(axis->pulse_Gen, 12);
 	else
-		set_speed(pulse_Gen, 0);
+		set_speed(axis->pulse_Gen, 0);
 
-	if(pulse_Gen->last_onoff_state && !on_off){
-		pulse_Gen->total = axis_timer_feedback(pulse_Gen);
+	if(axis->pulse_Gen->last_onoff_state && !on_off){
+		axis->pulse_Gen->total = axis_timer_feedback(axis->pulse_Gen);
 	}
 
-	if(pulse_Gen->speed != 0){
-		pulse_Generator(pulse_Gen, true);
-		pulse_Gen->finished = false;
+	if(axis->pulse_Gen->speed != 0){
+		pulse_Generator(axis->pulse_Gen, true);
+		axis->pulse_Gen->finished = false;
 	}
 	else{
-		pulse_Generator(pulse_Gen, false);
+		pulse_Generator(axis->pulse_Gen, false);
 	}
 
-	pulse_Gen->current = axis_timer_feedback(pulse_Gen);
-	pulse_Gen->last_onoff_state = on_off;
+	axis->pulse_Gen->current = axis_timer_feedback(axis->pulse_Gen);
+	axis->pulse_Gen->last_onoff_state = on_off;
 }
 
-void axis_modify(struct pulse_Gen_info *pulse_Gen){
+void axis_modify(struct axis *axis){
 	int current_pulses;
 
-	if(pulse_Gen->current - pulse_Gen->total > 0){
-		if(pulse_Gen == &x_pulse_Gen_info)
-			set_dir(x_axis, false);
-		else if(pulse_Gen == &y_pulse_Gen_info)
-			set_dir(y_axis, false);
-		else if(pulse_Gen == &z_pulse_Gen_info)
-			set_dir(z_axis, false);
-
-		pulse_Gen->speed = 5;
+	if(axis->pulse_Gen->current - axis->pulse_Gen->total > 0){
+		set_dir(axis, false);
+		axis->pulse_Gen->speed = 5;
 	}
 	else{
-		pulse_Gen->speed = 0;
+		axis->pulse_Gen->speed = 0;
 	}
 	// Constant speed
-	set_speed(pulse_Gen, pulse_Gen->speed);
+	set_speed(axis->pulse_Gen, axis->pulse_Gen->speed);
 
-	if(pulse_Gen->speed != 0){
-		pulse_Generator(pulse_Gen, true);
-		pulse_Gen->finished = false;
+	if(axis->pulse_Gen->speed != 0){
+		pulse_Generator(axis->pulse_Gen, true);
+		axis->pulse_Gen->finished = false;
 	}
 
 	// First calculation
-	if(pulse_Gen->current > pulse_Gen->total){
-		current_pulses = pulse_Gen->current - axis_timer_feedback(pulse_Gen);
-		if(current_pulses <= pulse_Gen->total){
-			pulse_Gen->changed_value = pulse_Gen->current - current_pulses;
-			pulse_Gen->current = current_pulses;
-			pulse_Gen->speed = 0;
+	if(axis->pulse_Gen->current > axis->pulse_Gen->total){
+		current_pulses = axis->pulse_Gen->current - axis_timer_feedback(axis->pulse_Gen);
+		if(current_pulses <= axis->pulse_Gen->total){
+			axis->pulse_Gen->changed_value = axis->pulse_Gen->current - current_pulses;
+			axis->pulse_Gen->current = current_pulses;
+			axis->pulse_Gen->speed = 0;
 		}
 	}
 
-	if(pulse_Gen->speed == 0){
-		pulse_Generator(pulse_Gen, false);
-		pulse_Gen->finished = true;
-
-		if(pulse_Gen == x_axis->pulse_Gen){
-			x_axis->current_pos += pulse2position(pulse_Gen);
-			x_axis->next_move = 0;
-		}
-		else if(pulse_Gen == y_axis->pulse_Gen){
-			y_axis->current_pos += pulse2position(pulse_Gen);
-			y_axis->next_move = 0;
-		}
-		else if(pulse_Gen == z_axis->pulse_Gen){
-			z_axis->current_pos += pulse2position(pulse_Gen);
-			z_axis->next_move = 0;
-		}
-		pulse_Gen->current = 0;
-		pulse_Gen->total = 0;
+	if(axis->pulse_Gen->speed == 0){
+		pulse_Generator(axis->pulse_Gen, false);
+		axis->pulse_Gen->finished = true;
+		axis->current_pos += pulse2position(axis);
+		axis->next_move = 0;
+		axis->pulse_Gen->current = 0;
+		axis->pulse_Gen->total = 0;
 		rtos_running_task->delete_flag = true;
 	}
 }
 
-double pulse2position(struct pulse_Gen_info *pulse_Gen){
+double pulse2position(struct axis *axis){
 	double changed_pos;
 
-	if(pulse_Gen == x_axis->pulse_Gen){
-		if(x_axis->dir == 'p')
-			changed_pos = pulse_Gen->current / x_scale;
-		else
-			changed_pos = -pulse_Gen->current / x_scale;
+	if(axis->dir == 'p' || axis->dir == 'u'){
+		changed_pos = axis->pulse_Gen->current / axis->scale;
 	}
-	else if(pulse_Gen == y_axis->pulse_Gen){
-		if(y_axis->dir == 'p')
-			changed_pos = pulse_Gen->current / y_scale;
-		else
-			changed_pos = -pulse_Gen->current / y_scale;
-	}
-	else if(pulse_Gen == z_axis->pulse_Gen){
-		if(z_axis->dir == 'u')
-			changed_pos = pulse_Gen->current / z_scale;
-		else
-			changed_pos = -pulse_Gen->current / z_scale;
+	else{
+		changed_pos = -axis->pulse_Gen->current / axis->scale;
 	}
 
 	return changed_pos;
-}
-
-uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen){
-	uint32_t counter = 0;
-
-	if(pulse_Gen == &x_pulse_Gen_info)
-		counter = x_Timer_Value_Get();
-	else if(pulse_Gen == &y_pulse_Gen_info)
-		counter = y_Timer_Value_Get();
-	else if(pulse_Gen == &z_pulse_Gen_info)
-		counter = z_Timer_Value_Get();
-
-	return counter;
 }
 
 void axes_init(void){
@@ -162,6 +115,19 @@ void axes_init(void){
 	x_axis_Init();
 	y_axis_Init();
 	z_axis_Init();
+}
+
+uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen){
+	uint32_t counter = 0;
+
+	if(pulse_Gen == &x_pulse_Gen_info)
+		counter = x_Timer_Value_Get();
+	else if(pulse_Gen == &y_pulse_Gen_info)
+		counter = y_Timer_Value_Get();
+	else if(pulse_Gen == &z_pulse_Gen_info)
+		counter = z_Timer_Value_Get();
+
+	return counter;
 }
 
 void set_speed(struct pulse_Gen_info *pulse_Gen, int max_speed){

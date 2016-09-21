@@ -31,20 +31,20 @@ struct pulse_Gen_info{
 
 struct axis{
 	struct pulse_Gen_info *pulse_Gen;
+	bool onoff;
 	uint8_t dir_pin;
 	char dir;
 	int total;
 	int remain;
 	double current_pos;	/* unit: mm */
-	double next_move;		/* unit: mm */
-	bool onoff;
+	double next_move;	/* unit: mm */
+	double scale;		/* unit: pulse/mm */
 };
 
 extern void axes_init(void);
-extern void axis_move(struct pulse_Gen_info *pulse_Gen, bool on_off);
-extern void axis_modify(struct pulse_Gen_info *pulse_Gen);
-extern uint32_t axis_timer_feedback(struct pulse_Gen_info *pulse_Gen);
-extern double pulse2position(struct pulse_Gen_info *pulse_Gen);
+extern void axis_move(struct axis *axis, bool on_off);
+extern void axis_modify(struct axis *axis);
+extern double pulse2position(struct axis *axis);
 
 extern struct axis *x_axis, *y_axis, *z_axis;
 extern const float duty;
