@@ -48,7 +48,7 @@ void Axis_Config(void){
 void motion_control(void){
 	pipe_character_Get();
 
-	if(z_axis->current_pos*1000 == 0 &&
+	if(/*z_axis->current_pos*1000 == 0 &&*/
 			x_axis->onoff == true &&
 			x_axis->pulse_Gen->finished == true){
 		if(x_axis->next_move == 0){
@@ -61,7 +61,7 @@ void motion_control(void){
 			rtos_task_create(move_know_distance, x_axis, 10);
 		}
 	}
-	if(z_axis->current_pos*1000 == 0 &&
+	if(/*z_axis->current_pos*1000 == 0 &&*/
 			y_axis->onoff == true &&
 			y_axis->pulse_Gen->finished == true){
 		if(y_axis->next_move == 0){
@@ -109,10 +109,10 @@ void move_know_distance(struct axis *n_axis){
 
 	if(n_axis->onoff != false){
 		axis_move(n_axis->pulse_Gen, true);
-		n_axis->pulse_Gen->total = fabs(n_axis->next_move * z_scale);
 	}
 	else{
 		axis_move(n_axis->pulse_Gen, false);
+		n_axis->pulse_Gen->total = fabs(n_axis->next_move * z_scale);
 		if(n_axis->pulse_Gen->speed == 0){
 			rtos_task_create(axis_modify, n_axis->pulse_Gen, 1);
 			rtos_running_task->delete_flag = true;
