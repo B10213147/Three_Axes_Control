@@ -20,8 +20,8 @@ struct axis *x_axis, *y_axis, *z_axis;
 const float duty = 0.5;
 const uint32_t full_Period = 16000/2*5; //unit = ticks/5ms
 
-//!	state == true means speed increase or constant speed
-//!	state == false means speed decrease
+//!	on_off == true means speed increase or constant speed
+//!	on_off == false means speed decrease, will not stop immediately
 void axis_move(struct axis *axis, bool on_off){
 	if(axis->pulse_Gen->finished == true){
 		set_dir(axis, true);
@@ -32,6 +32,7 @@ void axis_move(struct axis *axis, bool on_off){
 	else
 		set_speed(axis->pulse_Gen, 0);
 
+	// Detect if pulse_Gen start to decelerate
 	if(axis->pulse_Gen->last_onoff_state && !on_off){
 		axis->pulse_Gen->total = axis_timer_feedback(axis->pulse_Gen);
 	}
@@ -48,6 +49,7 @@ void axis_move(struct axis *axis, bool on_off){
 	axis->pulse_Gen->last_onoff_state = on_off;
 }
 
+//!	Must be actived after finish axis_move()
 void axis_modify(struct axis *axis){
 	int current_pulses;
 
@@ -66,7 +68,7 @@ void axis_modify(struct axis *axis){
 		axis->pulse_Gen->finished = false;
 	}
 
-	// First calculation
+	// Current pulses calculation
 	if(axis->pulse_Gen->current > axis->pulse_Gen->total){
 		current_pulses = axis->pulse_Gen->current - axis_timer_feedback(axis->pulse_Gen);
 		if(current_pulses <= axis->pulse_Gen->total){
@@ -75,6 +77,7 @@ void axis_modify(struct axis *axis){
 		}
 	}
 
+	// End of modify
 	if(axis->pulse_Gen->speed == 0){
 		pulse_Generator(axis->pulse_Gen, false);
 		axis->pulse_Gen->finished = true;
@@ -86,6 +89,7 @@ void axis_modify(struct axis *axis){
 	}
 }
 
+//!	Convert current pulse_Gen pulses to length(mm)
 double pulse2position(struct axis *axis){
 	double changed_pos;
 
@@ -151,8 +155,8 @@ void set_speed(struct pulse_Gen_info *pulse_Gen, int max_speed){
 		z_pwm_Speed_Set(pulse_Gen->speed);
 }
 
-//!	state == true means enable PWM
-//!	state == false means disable PWM
+//!	bEnable == true means enable PWM
+//!	bEnable == false means disable PWM
 void pulse_Generator(struct pulse_Gen_info *pulse_Gen, bool bEnable){
 	if(bEnable == false){
 		disable_os();

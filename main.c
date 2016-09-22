@@ -11,10 +11,9 @@
 void startup(void);
 void print_string(char *string);
 
-point Home = {0, 0};
 int main(void) {
 	startup();
-//
+
 	rtos_task_create(keys_driver, 0, 2);
 	rtos_task_create(uart_driver, 0, 1);
 	rtos_task_create(motion_control, 0, 15);
