@@ -102,7 +102,7 @@ void move_unknow_distance(struct axis *axis){
 
 void move_know_distance(struct axis *axis){
 	// Check if reach move value
-	if(fabs(axis->next_move)*1000 > fabs(pulse2position(axis))*1000){
+	if(fabs(axis->next_move)*50 > fabs(pulse2position(axis))*50){
 		axis->onoff = true;
 	}
 	else axis->onoff = false;
@@ -133,50 +133,65 @@ void pipe_character_Get(void){
 				x_axis->onoff = true;
 				x_axis->dir = 'p';
 				break;
-				// Arrow down
+			// Arrow down
 			case 0x42:
 				x_axis->onoff = true;
 				x_axis->dir = 'n';
 				break;
-				// Arrow right
+			// Arrow right
 			case 0x43:
 				y_axis->onoff = true;
 				y_axis->dir = 'p';
 				break;
-				// Arrow left
+			// Arrow left
 			case 0x44:
 				y_axis->onoff = true;
 				y_axis->dir = 'n';
 				break;
-				// Go Home
+			// Go Home
 			case 'H':
-				x_axis->next_move = -x_axis->current_pos;
-				x_axis->onoff = true;
-				if(x_axis->next_move*1000 < 0) x_axis->dir = 'n';
-				else x_axis->dir = 'p';
+				if(x_axis->current_pos*50 > 0 || x_axis->current_pos*50 < 0){
+					x_axis->next_move = -x_axis->current_pos;
+					x_axis->onoff = true;
+					if(x_axis->next_move*50 < 0) x_axis->dir = 'n';
+					else x_axis->dir = 'p';
+				}
+				else{
+					x_axis->onoff = false;
+				}
 
-				y_axis->next_move = -y_axis->current_pos;
-				y_axis->onoff = true;
-				if(y_axis->next_move*1000 < 0) y_axis->dir = 'n';
-				else y_axis->dir = 'p';
+				if(y_axis->current_pos*50 > 0 || y_axis->current_pos*50 < 0){
+					y_axis->next_move = -y_axis->current_pos;
+					y_axis->onoff = true;
+					if(y_axis->next_move*50 < 0) y_axis->dir = 'n';
+					else y_axis->dir = 'p';
+				}
+				else{
+					y_axis->onoff = false;
+				}
 
 				break;
-				// z_axis goes up
+			// z_axis goes up
 			case 'u':
 				z_axis->onoff = true;
 				z_axis->dir = 'u';
 				break;
-				// z_axis goes down
+			// z_axis goes down
 			case 'd':
 				z_axis->onoff = true;
 				z_axis->dir = 'd';
 				break;
-				// z_axis goes home
+			// z_axis goes home
 			case 'U':
-				z_axis->next_move = -z_axis->current_pos;
-				z_axis->onoff = true;
-				if(z_axis->next_move*1000 < 0) z_axis->dir = 'd';
-				else z_axis->dir = 'u';
+				if(z_axis->current_pos*50 > 0 || z_axis->current_pos*50 < 0){
+					z_axis->next_move = -z_axis->current_pos;
+					z_axis->onoff = true;
+					if(z_axis->next_move*50 < 0) z_axis->dir = 'd';
+					else z_axis->dir = 'u';
+				}
+				else{
+					z_axis->onoff = false;
+				}
 				break;
 			}
 		}while(rtos_pipe_read(mc_Fifo, &temp, 1));
