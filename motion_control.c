@@ -11,38 +11,38 @@
 #include "three_axes.h"
 
 struct rtos_pipe *mc_Fifo;
-double x_scale, y_scale, z_scale;		/* unit: pulse/mm */
 
-void move_unknow_distance(struct axis *n_axis);
-void move_know_distance(struct axis *n_axis);
+void move_unknow_distance(struct axis *axis);
+void move_know_distance(struct axis *axis);
 void pipe_character_Get(void);
 
 void Axis_Config(void){
 	AxisInitTypeDef Axis_x, Axis_y, Axis_z;
 
+	axes_init();
+
 	Axis_x.MotorStepPerRev = 360/1.8;
 	Axis_x.DriverMicrostepping = 1;
 	Axis_x.MotorCoupleLeadscrew = 1;
 	Axis_x.LeadscrewPitch = 1.5;
-	x_scale = Axis_x.MotorStepPerRev * Axis_x.DriverMicrostepping *
+	x_axis->scale = Axis_x.MotorStepPerRev * Axis_x.DriverMicrostepping *
 			Axis_x.MotorCoupleLeadscrew / Axis_x.LeadscrewPitch;
 
 	Axis_y.MotorStepPerRev = 360/1.8;
 	Axis_y.DriverMicrostepping = 1;
 	Axis_y.MotorCoupleLeadscrew = 1;
 	Axis_y.LeadscrewPitch = 1.5;
-	y_scale = Axis_y.MotorStepPerRev * Axis_y.DriverMicrostepping *
+	y_axis->scale = Axis_y.MotorStepPerRev * Axis_y.DriverMicrostepping *
 			Axis_y.MotorCoupleLeadscrew / Axis_y.LeadscrewPitch;
 
 	Axis_z.MotorStepPerRev = 360/1.8;
 	Axis_z.DriverMicrostepping = 1;
 	Axis_z.MotorCoupleLeadscrew = 1;
 	Axis_z.LeadscrewPitch = 1.5;
-	z_scale = Axis_z.MotorStepPerRev * Axis_z.DriverMicrostepping *
+	z_axis->scale = Axis_z.MotorStepPerRev * Axis_z.DriverMicrostepping *
 			Axis_z.MotorCoupleLeadscrew / Axis_z.LeadscrewPitch;
 
-	mc_Fifo = rtos_pipe_create(50);
-	axes_init();
+	mc_Fifo = rtos_pipe_create(20);
 }
 
 void motion_control(void){
@@ -52,12 +52,12 @@ void motion_control(void){
 			x_axis->onoff == true &&
 			x_axis->pulse_Gen->finished == true){
 		if(x_axis->next_move == 0){
-			axis_move(x_axis->pulse_Gen, true);
+			axis_move(x_axis, true);
 			// interval means acceleration
 			rtos_task_create(move_unknow_distance, x_axis, 10);
 		}
 		else{
-			axis_move(x_axis->pulse_Gen, true);
+			axis_move(x_axis, true);
 			rtos_task_create(move_know_distance, x_axis, 10);
 		}
 	}
@@ -69,7 +69,7 @@ void motion_control(void){
 			rtos_task_create(move_unknow_distance, y_axis, 10);
 		}
 		else{
-			axis_move(y_axis->pulse_Gen, true);
+			axis_move(y_axis, true);
 			rtos_task_create(move_know_distance, y_axis, 10);
 		}
 	}
@@ -81,40 +81,40 @@ void motion_control(void){
 			rtos_task_create(move_unknow_distance, z_axis, 10);
 		}
 		else{
-			axis_move(z_axis->pulse_Gen, true);
+			axis_move(z_axis, true);
 			rtos_task_create(move_know_distance, z_axis, 10);
 		}
 	}
 }
 
-void move_unknow_distance(struct axis *n_axis){
-	if(n_axis->onoff != false){
-		axis_move(n_axis->pulse_Gen, true);
+void move_unknow_distance(struct axis *axis){
+	if(axis->onoff != false){
+		axis_move(axis, true);
 	}
 	else{
-		axis_move(n_axis->pulse_Gen, false);
-		if(n_axis->pulse_Gen->speed == 0){
-			rtos_task_create(axis_modify, n_axis->pulse_Gen, 1);
+		axis_move(axis, false);
+		if(axis->pulse_Gen->speed == 0){
+			rtos_task_create(axis_modify, axis, 1);
 			rtos_running_task->delete_flag = true;
 		}
 	}
 }
 
-void move_know_distance(struct axis *n_axis){
+void move_know_distance(struct axis *axis){
 	// Check if reach move value
-	if(fabs(n_axis->next_move)*1000 > fabs(pulse2position(n_axis->pulse_Gen))*1000){
-		n_axis->onoff = true;
+	if(fabs(axis->next_move)*1000 > fabs(pulse2position(axis))*1000){
+		axis->onoff = true;
 	}
-	else n_axis->onoff = false;
+	else axis->onoff = false;
 
-	if(n_axis->onoff != false){
-		axis_move(n_axis->pulse_Gen, true);
+	if(axis->onoff != false){
+		axis_move(axis, true);
 	}
 	else{
-		axis_move(n_axis->pulse_Gen, false);
-		n_axis->pulse_Gen->total = fabs(n_axis->next_move * z_scale);
-		if(n_axis->pulse_Gen->speed == 0){
-			rtos_task_create(axis_modify, n_axis->pulse_Gen, 1);
+		axis_move(axis, false);
+		axis->pulse_Gen->total = fabs(axis->next_move * axis->scale);
+		if(axis->pulse_Gen->speed == 0){
+			rtos_task_create(axis_modify, axis, 1);
 			rtos_running_task->delete_flag = true;
 		}
 	}
