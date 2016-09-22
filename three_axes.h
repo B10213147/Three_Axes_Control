@@ -15,35 +15,31 @@
 #include "y_axis.h"
 #include "z_axis.h"
 
-#define RED		GPIO_PIN_1
-#define BLUE	GPIO_PIN_2
-#define GREEN	GPIO_PIN_3
-
 struct pulse_Gen_info{
 	int total;
-	int remain;
 	int current;
-	int next;
+	int speed;
 	bool working;
 	bool finished;
+	bool last_onoff_state;
 };
 
 struct axis{
 	struct pulse_Gen_info *pulse_Gen;
+	bool onoff;
 	uint8_t dir_pin;
 	char dir;
-	int total;
-	int remain;
-	float current_pos;	/* unit: mm */
-	float next_move;		/* unit: mm */
+	double current_pos;	/* unit: mm */
+	double next_move;	/* unit: mm */
+	double scale;		/* unit: pulse/mm */
 };
 
 extern void axes_init(void);
-extern void axis_move(struct pulse_Gen_info *pulse_Gen, int pulses);
+extern void axis_move(struct axis *axis, bool on_off);
+extern void axis_modify(struct axis *axis);
+extern double pulse2position(struct axis *axis);
 
-extern struct axis *x_axis;
-extern struct axis *y_axis;
-extern struct axis *z_axis;
+extern struct axis *x_axis, *y_axis, *z_axis;
 extern const float duty;
 extern const uint32_t full_Period;
 
