@@ -39,16 +39,14 @@ struct rtos_task_list{
 // rtos
 extern void enable_os(void);
 extern void disable_os(void);
-extern void rtos_Timer0_irq(void);
 extern void rtos_init(uint32_t slice);
 
 // rtos_sched
 extern void rtos_sched(void);
-extern void rtos_Timer0_irq();
 
 // rtos_task
 extern struct rtos_task *rtos_running_task;		// Currently running task.
-extern struct rtos_task *rtos_ready_tasks;			// List of ready to run tasks.
+extern struct rtos_task *rtos_ready_tasks;		// List of ready to run tasks.
 extern void rtos_task_create(voidfuncptr function, void *arg, int interval);
 extern void rtos_task_delete(struct rtos_task *task);
 extern void rtos_task_insert(struct rtos_task **list, struct rtos_task *task);
