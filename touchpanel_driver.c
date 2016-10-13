@@ -13,20 +13,26 @@
 
 void data_valid(void);
 
-uint8_t pin_state = GPIO_PIN_0;
+uint8_t pin_state = 0;
+uint32_t data = 0;
 void touchpanel_driver(void){
 	for(int i=0; i<50; i++);
-	for(int i=0; i<16; i++){
+	for(int i=0; i<32; i++){
 		for(int j=0; j<100; j++);
-	if(pin_state != 0){
-		pin_state = 0;
-	}
-	else{
-		pin_state = GPIO_PIN_0;
-	}
-	GPIOPinWrite(GPIOD_BASE, GPIO_PIN_0, pin_state);
+		if(pin_state != 0){
+			if((GPIOPinRead(GPIOD_BASE, GPIO_PIN_1) | GPIO_PIN_1) == 0){
+				data |= 0x1 << i;
+			}
+			pin_state = 0;
+
+		}
+		else{
+			pin_state = GPIO_PIN_0;
+		}
+		GPIOPinWrite(GPIOD_BASE, GPIO_PIN_0, pin_state);
 
 	}
+	data = 0;
 	GPIOIntEnable(GPIOD_BASE, GPIO_INT_PIN_1);
 }
 
