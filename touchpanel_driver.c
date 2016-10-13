@@ -13,7 +13,20 @@
 
 void data_valid(void);
 
+uint8_t pin_state = GPIO_PIN_0;
 void touchpanel_driver(void){
+	for(int i=0; i<50; i++);
+	for(int i=0; i<16; i++){
+		for(int j=0; j<100; j++);
+	if(pin_state != 0){
+		pin_state = 0;
+	}
+	else{
+		pin_state = GPIO_PIN_0;
+	}
+	GPIOPinWrite(GPIOD_BASE, GPIO_PIN_0, pin_state);
+
+	}
 	GPIOIntEnable(GPIOD_BASE, GPIO_INT_PIN_1);
 }
 
@@ -29,7 +42,7 @@ void touchpanel_driver_init(void){
 
 	// SCL
 	GPIOPinTypeGPIOOutput(GPIOD_BASE, GPIO_PIN_0);
-	GPIOPinWrite(GPIOD_BASE, GPIO_PIN_0, GPIO_PIN_0);
+	GPIOPinWrite(GPIOD_BASE, GPIO_PIN_0, pin_state);
 	// SDO
 	GPIOPinTypeGPIOInput(GPIOD_BASE, GPIO_PIN_1);
 
